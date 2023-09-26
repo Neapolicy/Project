@@ -8,10 +8,11 @@ public class wallet
     public void bets()
     {
         Scanner s = new Scanner(System.in);
-        while (picking == true)
+        while (picking)
         {
-            System.out.println("How much money do you have?");
+            System.out.println("How much money do you have? (This will be rounded to the nearest dollar)");
             double answer = s.nextDouble();
+            answer = (int)(answer + 0.5);
             System.out.println("How much are you betting?");
             double betting = s.nextDouble();
             if ((answer >= Integer.MAX_VALUE || answer<=0) || (betting >=Integer.MAX_VALUE || betting <= 0))

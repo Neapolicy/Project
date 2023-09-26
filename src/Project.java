@@ -4,6 +4,7 @@ public class Project
 {
     public static void main(String[] args)
     {
+        Scanner s = new Scanner(System.in);
         wallet wallet = new wallet();
         wallet.bets();
         System.out.println("Do you want a rigged coin flip or fair one?");
