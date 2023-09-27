@@ -4,32 +4,13 @@ public class Project
 {
     public static void main(String[] args)
     {
-        Scanner s = new Scanner(System.in);
-        wallet wallet = new wallet();
-        wallet.bets();
-        System.out.println("Do you want a rigged coin flip or fair one?");
-        Scanner s = new Scanner(System.in);
-        final String res = s.nextLine();
-        if (res.equals("rigged"))
-        {
-            System.out.println("Coins will be rigged.");
-        }
-        else
-        {
-            System.out.println("Coins will be fair.");
-        }
-        System.out.println("Heads or tails?");
-        String answer = s.nextLine();
-        System.out.println("How many times do you want to flip the coin?");
-        int times = s.nextInt();
-        s.close();
-        if (res.equals("rigged"))
-        {
-            Coin coin = new Coin();
-        }
-        else
-        {
-            Coin coin_two = new Coin(answer, times);
-        }
+        System.out.println("You're in debt");
+        System.out.println("You love coins");
+        System.out.println("And you LOVE to gamble");
+        System.out.println("You know what to do.");
+        Player p = new Player();
+        p.playerPreference();
+        p.playerGuess();
+        p.timesFlip();
     }
 }
