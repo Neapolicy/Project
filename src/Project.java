@@ -10,6 +10,7 @@ public class Project
         System.out.println("You know what to do.");
         Player p = new Player();
         p.playerPreference();
+        wallet w = new wallet();
         p.playerGuess();
         p.timesFlip();
     }

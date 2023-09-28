@@ -6,11 +6,11 @@ public class Player
     private String guess;
     private int energy = 100;
     private int times;
-    private Scanner s;
+    private boolean run = true;
+    private final Scanner s = new Scanner(System.in);
 
     public Player()
     {
-        s = new Scanner(System.in);
         System.out.println("What's your name?");
         String res = s.nextLine();
         name = res;
@@ -32,14 +32,19 @@ public class Player
     }
     public void playerGuess()
     {
-        System.out.println("Heads or tails?");
-        String answer = s.nextLine();
-        while ((answer != "heads") || (answer != "tails"))
+        String answer = null;
+        while (run)
         {
-            System.out.println("Invalid input.");
             System.out.println("Heads or tails?");
-            s = new Scanner(System.in);
             answer = s.nextLine();
+            if (answer.equals("heads") || (answer.equals("tails")))
+            {
+                run = false;
+            }
+            else
+            {
+                System.out.println("Invalid input.");
+            }
         }
         guess = answer;
     }

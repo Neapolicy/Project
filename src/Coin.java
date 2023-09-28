@@ -24,21 +24,13 @@ public class Coin
                 }
             } else {
                 ++tails;
-                if (side.equals("tails") || side.equals("tail")) {
-                    cheer();
-                } else {
-                    System.out.println("You got it wrong.");
-                }
             }
         }
         results(heads, tails);
     }
-    public void cheer()
-    {
-        System.out.println("You got it!");
-    }
     public void results(int h, int t)
     {
+        System.out.println("The coin has landed on heads " + h + " times." + "\n" + "The coin has landed on tails " + t + " times.");
         double proportionOfTails = ((double) t /(t + h));
         System.out.println("The coin has landed tails " + (int)(proportionOfTails * 100)+ " percent of the time.");
     }
