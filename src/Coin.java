@@ -4,10 +4,13 @@ public class Coin
     private int heads;
     private int tails;
 
-    public Coin()
+    public Coin(int times)
     {
-        System.out.println("It's heads");
-        ++heads;
+        for(int i = 0; i < times; i+= 1)
+        {
+            ++heads;
+        }
+        results();
     }
     public Coin(String side, int times)
     {
@@ -17,11 +20,6 @@ public class Coin
             int random_int = rand.nextInt(2);
             if (random_int == 0) {
                 ++heads;
-                if (side.equals("heads") || side.equals("head")) {
-                    cheer();
-                } else {
-                    System.out.println("You got it wrong.");
-                }
             } else {
                 ++tails;
             }
@@ -33,5 +31,10 @@ public class Coin
         System.out.println("The coin has landed on heads " + h + " times." + "\n" + "The coin has landed on tails " + t + " times.");
         double proportionOfTails = ((double) t /(t + h));
         System.out.println("The coin has landed tails " + (int)(proportionOfTails * 100)+ " percent of the time.");
+    }
+    public void results()
+    {
+        System.out.println("The coin has landed on heads " + heads + " times." + "\n" + "The coin has landed on tails " + tails + " times.");
+        System.out.println("The coin has landed tails 0 percent of the time.");
     }
 }

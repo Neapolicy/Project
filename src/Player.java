@@ -32,11 +32,10 @@ public class Player
     }
     public void playerGuess()
     {
-        String answer = null;
+        System.out.println("Heads or tails?");
+        String answer = s.nextLine();
         while (run)
         {
-            System.out.println("Heads or tails?");
-            answer = s.nextLine();
             if (answer.equals("heads") || (answer.equals("tails")))
             {
                 run = false;
@@ -44,6 +43,7 @@ public class Player
             else
             {
                 System.out.println("Invalid input.");
+                answer = s.nextLine();
             }
         }
         guess = answer;
@@ -54,7 +54,7 @@ public class Player
         int times = s.nextInt();
         if (preference.equals("rigged"))
         {
-            Coin coin = new Coin();
+            Coin coin = new Coin(times);
         }
         else
         {
