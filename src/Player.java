@@ -1,11 +1,9 @@
 import java.util.Scanner;
 public class Player
 {
-    private String name = null;
+    private final String name;
     private String preference;
     private String guess;
-    private int energy = 100;
-    private int times;
     private boolean run = true;
     private final Scanner s = new Scanner(System.in);
 
@@ -29,7 +27,6 @@ public class Player
             System.out.println("Coins will be fair.");
         }
         preference = res;
-        wallet w = new wallet();
     }
     public void playerGuess()
     {
@@ -49,27 +46,22 @@ public class Player
         }
         guess = answer;
     }
-    public void timesFlip()
+    public void timesFlip(int bets)
     {
         System.out.println("How many times do you want to flip the coin?");
         int times = s.nextInt();
         if (preference.equals("rigged"))
         {
-            Coin coin = new Coin(times);
+            Coin coin = new Coin(times, bets);
         }
         else
         {
-            Coin coin_two = new Coin(guess, times);
+            Coin coin_two = new Coin(guess, times, bets);
         }
     }
 
-    public void sleep()
+    public void welcome()
     {
-        System.out.println("You go to sleep. You feel energized and refreshed!");
-        energy = 100;
-    }
-    public String getName()
-    {
-        return name;
+        System.out.println("Welcome to the gambling den, " + name + "!" );
     }
 }

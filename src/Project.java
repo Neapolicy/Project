@@ -8,9 +8,6 @@ public class Project
         System.out.println("You love coins");
         System.out.println("And you LOVE to gamble");
         System.out.println("You know what to do.");
-        Player p = new Player();
-        p.playerPreference();
-        p.playerGuess();
-        p.timesFlip();
+        game g = new game();
     }
 }

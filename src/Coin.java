@@ -6,7 +6,7 @@ public class Coin
     private String response;
     private int timed;
 
-    public Coin(int times)
+    public Coin(int times, int wager)
     {
         for(int i = 0; i < times; i+= 1)
         {
@@ -14,7 +14,7 @@ public class Coin
         }
         results();
     }
-    public Coin(String side, int times)
+    public Coin(String side, int times, int wager)
     {
         response = side;
         timed = times;
