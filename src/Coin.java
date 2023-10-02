@@ -4,6 +4,7 @@ public class Coin
     private int heads;
     private int tails;
     private String response;
+    private int timed;
 
     public Coin(int times)
     {
@@ -16,6 +17,7 @@ public class Coin
     public Coin(String side, int times)
     {
         response = side;
+        timed = times;
         Random rand = new Random();
         for(int i = 0; i < times; i+= 1)
         {
@@ -30,7 +32,12 @@ public class Coin
     }
     public void results(int h, int t)
     {
-        System.out.println("The coin has landed on heads " + h + " times." + "\n" + "The coin has landed on tails " + t + " times.");
+        String time = "time";
+        if (timed>1)
+        {
+            time += "s";
+        }
+        System.out.println("The coin has landed on heads " + h + " " + time + "\nThe coin has landed on tails " + t + " " + time);
         double proportionOfTails = ((double) t /(t + h));
         System.out.println("The coin has landed tails " + (int)(proportionOfTails * 100)+ " percent of the time.");
         if (response.equals("heads") && proportionOfTails>=60 || response.equals("tails") && proportionOfTails>=45)
@@ -44,7 +51,12 @@ public class Coin
     }
     public void results()
     {
-        System.out.println("The coin has landed on heads " + heads + " times." + "\n" + "The coin has landed on tails " + tails + " times.");
+        String time = "time";
+        if (timed>1)
+        {
+            time += "s";
+        }
+        System.out.println("The coin has landed on heads " + heads + " " + time + "\n" + "The coin has landed on tails " + tails + " time.");
         System.out.println("The coin has landed heads 100 percent of the time.");
     }
 }

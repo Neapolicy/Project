@@ -68,4 +68,8 @@ public class Player
         System.out.println("You go to sleep. You feel energized and refreshed!");
         energy = 100;
     }
+    public String getName()
+    {
+        return name;
+    }
 }
