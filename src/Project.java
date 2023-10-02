@@ -11,8 +11,6 @@ public class Project
         Player p = new Player();
         p.playerPreference();
         p.playerGuess();
-        wallet w = new wallet();
-        System.out.println("Your balance is " + w.getBalance() + " dollars.");
         p.timesFlip();
     }
 }

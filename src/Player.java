@@ -29,6 +29,7 @@ public class Player
             System.out.println("Coins will be fair.");
         }
         preference = res;
+        wallet w = new wallet();
     }
     public void playerGuess()
     {

@@ -34,4 +34,16 @@ public class wallet
     {
         return balance;
     }
+    public int lose_money(int bal, int bets)
+    {
+        balance = bal;
+        balance -= bets;
+        return balance;
+    }
+    public int earn_money(int bal, int bets)
+    {
+        balance = bal;
+        balance += bets;
+        return balance;
+    }
 }
