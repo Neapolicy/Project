@@ -8,7 +8,6 @@ public class game
     public game()
     {
         Player p = new Player();
-        System.out.println(p);
         p.welcome();
         p.playerPreference();
         wallet w = new wallet();
@@ -24,6 +23,7 @@ public class game
         w.setBalance(balance);
         checkDebt();
         System.out.println("Your balance is now " + w.getBalance() + " dollars");
+        System.out.println("Your address >:) - " + p);
     }
     public void loseMoney()
     {
