@@ -61,7 +61,7 @@ public class game
     }
     public void checkDebt()
     {
-        if (balance >= 0)
+        if (balance <= 0)
         {
             System.out.println("No money left :(, you can no longer gamble your life savings");
         }

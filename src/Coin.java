@@ -57,7 +57,7 @@ public class Coin
             time += "s";
         }
         System.out.println("The coin has landed on heads " + heads + " " + time + "\n" + "The coin has landed on tails " + tails + " time.");
-        System.out.println("The coin has landed heads 100 percent of the time.");
+        System.out.println("The coin has landed heads " + 100 + " percent of the time.");
     }
     public int getHeads()
     {
