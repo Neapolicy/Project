@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 public class wallet
 {
     private int balance = 100;
@@ -34,4 +33,5 @@ public class wallet
     {
         return balance;
     }
+    public void setBalance(int dollar) {balance = dollar;}
 }

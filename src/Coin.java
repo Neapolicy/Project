@@ -5,9 +5,6 @@ public class Coin
     private int tails;
     private String response;
     private int timed;
-    private int balance;
-    private int bets;
-    private int num_money;
 
     public Coin(int times)
     {
@@ -62,15 +59,12 @@ public class Coin
         System.out.println("The coin has landed on heads " + heads + " " + time + "\n" + "The coin has landed on tails " + tails + " time.");
         System.out.println("The coin has landed heads 100 percent of the time.");
     }
-
-    public int lose_money(int bal, int bets)
+    public int getHeads()
     {
-        bal -= bets;
-        return bal;
+        return heads;
     }
-    public int earn_money(int bal, int bets, int mon)
+    public int getTails()
     {
-        bal += bets;
-        return bal;
+        return tails;
     }
 }

@@ -6,12 +6,13 @@ public class Player
     private String guess;
     private boolean run = true;
     private final Scanner s = new Scanner(System.in);
+    private int heads;
+    private int tails;
 
     public Player()
     {
         System.out.println("What's your name?");
-        String res = s.nextLine();
-        name = res;
+        name = s.nextLine();
     }
 
     public void playerPreference()
@@ -46,22 +47,37 @@ public class Player
         }
         guess = answer;
     }
-    public void timesFlip(int bets)
+    public void timesFlip()
     {
         System.out.println("How many times do you want to flip the coin?");
         int times = s.nextInt();
         if (preference.equals("rigged"))
         {
             Coin coin = new Coin(times);
+            heads = coin.getHeads();
         }
         else
         {
             Coin coin_two = new Coin(guess, times);
+            heads = coin_two.getHeads();
+            tails = coin_two.getTails();
         }
     }
 
     public void welcome()
     {
         System.out.println("Welcome to the gambling den, " + name + "!" );
+    }
+    public int getHeads()
+    {
+        return heads;
+    }
+    public int getTails()
+    {
+        return tails;
+    }
+    public String getResponse()
+    {
+        return guess;
     }
 }
