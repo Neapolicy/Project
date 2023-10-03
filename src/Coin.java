@@ -5,8 +5,11 @@ public class Coin
     private int tails;
     private String response;
     private int timed;
+    private int balance;
+    private int bets;
+    private int num_money;
 
-    public Coin(int times, int wager)
+    public Coin(int times)
     {
         for(int i = 0; i < times; i+= 1)
         {
@@ -14,7 +17,7 @@ public class Coin
         }
         results();
     }
-    public Coin(String side, int times, int wager)
+    public Coin(String side, int times)
     {
         response = side;
         timed = times;
@@ -22,7 +25,7 @@ public class Coin
         for(int i = 0; i < times; i+= 1)
         {
             int random_int = rand.nextInt(2);
-            if (random_int == 0) {
+            if (random_int == 0){
                 ++heads;
             } else {
                 ++tails;
@@ -58,5 +61,16 @@ public class Coin
         }
         System.out.println("The coin has landed on heads " + heads + " " + time + "\n" + "The coin has landed on tails " + tails + " time.");
         System.out.println("The coin has landed heads 100 percent of the time.");
+    }
+
+    public int lose_money(int bal, int bets)
+    {
+        bal -= bets;
+        return bal;
+    }
+    public int earn_money(int bal, int bets, int mon)
+    {
+        bal += bets;
+        return bal;
     }
 }

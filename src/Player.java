@@ -52,11 +52,11 @@ public class Player
         int times = s.nextInt();
         if (preference.equals("rigged"))
         {
-            Coin coin = new Coin(times, bets);
+            Coin coin = new Coin(times);
         }
         else
         {
-            Coin coin_two = new Coin(guess, times, bets);
+            Coin coin_two = new Coin(guess, times);
         }
     }
 
