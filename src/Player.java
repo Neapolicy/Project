@@ -41,7 +41,7 @@ public class Player
             }
             else
             {
-                System.out.println("Invalid input.");
+                System.out.println(name.toString() + ", please put a valid input"); // added tostring to this
                 answer = s.nextLine();
             }
         }
