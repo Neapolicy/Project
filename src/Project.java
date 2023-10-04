@@ -9,5 +9,6 @@ public class Project
         System.out.println("And you LOVE to gamble");
         System.out.println("You know what to do.");
         game g = new game();
+        System.out.println("Game ID: " + g.toString());
     }
 }

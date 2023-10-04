@@ -23,7 +23,7 @@ public class game
         w.setBalance(balance);
         checkDebt();
         System.out.println("Your balance is now " + w.getBalance() + " dollars");
-        System.out.println("Your address >:) - " + p);
+        System.out.println("Player ID: " + p);
     }
     public void loseMoney()
     {
