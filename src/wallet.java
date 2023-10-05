@@ -11,19 +11,31 @@ public class wallet
         {
             System.out.println("How much are you betting?(this is rounded to the nearest integer)");
             double betting = s.nextDouble();
-            betting = (int)(betting + 0.5);
-            if ((betting >=Integer.MAX_VALUE || betting <= 0))
+            betting = (int) (betting + 0.5);
+            if ((betting >= Integer.MAX_VALUE || betting <= 0))
             {
                 System.out.println("Invalid, try again");
-            }
-            else
+            } else
             {
                 bet = betting;
                 picking = false;
             }
-            }
         }
-
+    }
+    public void rebet()
+    {
+        System.out.println("How much are you betting?(this is rounded to the nearest integer)");
+        double betting = s.nextDouble();
+        betting = (int) (betting + 0.5);
+        if ((betting >= Integer.MAX_VALUE || betting <= 0))
+        {
+            System.out.println("Invalid, try again");
+        } else
+        {
+            bet = betting;
+            picking = false;
+        }
+    }
     public double getBets()
     {
         return bet;

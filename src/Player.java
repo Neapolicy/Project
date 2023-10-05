@@ -1,6 +1,6 @@
 import java.util.Scanner;
 public class Player
-    // couldnt. one of those teachers
+    // alr, its fine
 {
     private final String name;
     private String preference;
