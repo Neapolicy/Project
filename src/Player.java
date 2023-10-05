@@ -1,6 +1,6 @@
 import java.util.Scanner;
 public class Player
-    // sign my name on attendence if possible k thx
+    // couldnt. one of those teachers
 {
     private final String name;
     private String preference;
