@@ -1,5 +1,6 @@
 import java.util.Scanner;
 public class Player
+    // sign my name if possible k thx
 {
     private final String name;
     private String preference;
