@@ -1,11 +1,11 @@
 import java.util.Scanner;
-public class wallet
+public class Wallet
 {
     private int balance = 100;
     private double bet;
     private boolean picking = true;
     private final Scanner s = new Scanner(System.in);
-    public wallet()
+    public Wallet()
     {
         while (picking)
         {

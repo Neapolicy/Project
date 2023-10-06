@@ -1,9 +1,10 @@
 import java.util.Random;
-public class slot
+public class Slots
 {
     Random rand = new Random();
     String slotValues;
-    public slot()
+    int jackpot = 5000;
+    public Slots()
     {
         System.out.println("So you picked slots, huh? \nThere will be NO refunds.");
     }

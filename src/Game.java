@@ -1,16 +1,16 @@
-public class game
+public class Game
 {
     private String guess;
     private int tails;
     private int heads;
     private int balance;
     private int wager;
-    public game()
+    public Game()
     {
         Player p = new Player();
         p.welcome();
         p.playerPreference();
-        wallet w = new wallet();
+        Wallet w = new Wallet();
         p.playerGuess();
         p.timesFlip();
         balance = w.getBalance();

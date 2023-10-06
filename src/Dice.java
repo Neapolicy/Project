@@ -1,11 +1,11 @@
 import java.util.Scanner;
 import java.util.Random;
-public class dice
+public class Dice
 {
-    private int[] sums;
+    private int[] sums = {0};
     private int prediction;
     private Scanner s = new Scanner(System.in);
-    public dice()
+    public Dice()
     {
         System.out.print("Dice eh? \nWell, here are the rules:");
         System.out.println("Predict the sum of the rolls of 3 dices correctly to win");
@@ -23,7 +23,7 @@ public class dice
         Random rand = new Random();
         for(int i = 0; i < 3; i+= 1)
         {
-            int random_int = rand.nextInt(6) + 1;
+            Integer random_int = rand.nextInt(6) + 1;
         }
     }
 }
