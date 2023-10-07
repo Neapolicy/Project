@@ -1,6 +1,5 @@
 import java.util.Scanner;
 public class Player
-    // alr, its fine
 {
     private final String name;
     private String preference;

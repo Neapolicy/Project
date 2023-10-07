@@ -6,7 +6,6 @@ public class Dice
     private int[] sums = {};
     private int prediction;
     private Scanner s = new Scanner(System.in);
-    private boolean lose = false;
     private int total = 0;
     public Dice()
     {
@@ -17,7 +16,7 @@ public class Dice
         prediction = s.nextInt();
         if (prediction > 2 || prediction < 0)
         {
-            System.out.println("Invalid input");
+            System.out.println("Invalid input, try again");
             prediction = s.nextInt();
         }
         roll();
@@ -32,10 +31,9 @@ public class Dice
             sums[sums.length - 1] = random_int;
         }
         System.out.println("Here are the results: " + Arrays.toString(sums));
-        getSum(sums);
+        getSum();
     }
-
-    public void getSum(int[] results)
+    public void getSum()
     {
         for(int i = 0; i < sums.length; i++)
         {
@@ -46,6 +44,17 @@ public class Dice
     }
     public boolean getVictory(int sum, int guess)
     {
+        for (int i = 0; i < sums.length; i++)
+        {
+            for (int k = 0; k < sums.length; k++)
+            {
+                if (sums[i] != sums[k])
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
         if (sum > 10 && guess == 2)
         {
             return true;
