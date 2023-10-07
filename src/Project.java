@@ -9,6 +9,6 @@ public class Project
         System.out.println("And you LOVE to gamble");
         System.out.println("You know what to do.");
         Dice d = new Dice();
-        //Game g = new Game();
+        //game g = new game();
     }
 }
