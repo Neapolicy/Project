@@ -40,9 +40,9 @@ public class Dice
             total = sums[i] + total;
         }
         System.out.println("The sum of the dices are: " + total);
-        System.out.println(getVictory(total, prediction));
+        System.out.println(getVictory());
     }
-    public boolean getVictory(int sum, int guess)
+    public boolean getVictory()
     {
         for (int i = 0; i < sums.length; i++)
         {
@@ -55,11 +55,11 @@ public class Dice
             }
             return true;
         }
-        if (sum > 10 && guess == 2)
+        if (total > 10 && prediction == 2)
         {
             return true;
         }
-        if (sum < 11 && guess == 1)
+        if (total < 11 && prediction == 1)
         {
             return true;
         }

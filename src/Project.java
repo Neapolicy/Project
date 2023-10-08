@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class Project
 {
     public static void main(String[] args)
@@ -8,7 +6,6 @@ public class Project
         System.out.println("You love coins");
         System.out.println("And you LOVE to gamble");
         System.out.println("You know what to do.");
-        Dice d = new Dice();
-        //game g = new game();
+        Game g = new Game();
     }
 }

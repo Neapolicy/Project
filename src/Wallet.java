@@ -24,7 +24,7 @@ public class Wallet
     }
     public void rebet()
     {
-        System.out.println("How much are you betting?(this is rounded to the nearest integer)");
+        System.out.println("So,how much are you betting?(this is rounded to the nearest integer)");
         double betting = s.nextDouble();
         betting = (int) (betting + 0.5);
         if ((betting >= Integer.MAX_VALUE || betting <= 0))
@@ -45,5 +45,4 @@ public class Wallet
     {
         return balance;
     }
-    public void setBalance(int dollar) {balance = dollar;}
 }
