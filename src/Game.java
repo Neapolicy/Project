@@ -5,6 +5,9 @@ public class Game
     private int tails;
     private int heads;
     private boolean run = true;
+    private int balance;
+    private double bets;
+    private int victory;
     public Game()
     {
         Player p = new Player();
@@ -13,6 +16,8 @@ public class Game
         System.out.println("Dice game, Slots, or Coin flip?");
         Scanner s = new Scanner(System.in);
         String response = s.nextLine();
+        balance = w.getBalance();
+        bets = w.getBets();
         while (run)
         {
             if (response.equals("Coin flip"))
@@ -23,8 +28,9 @@ public class Game
                 heads = p.getHeads();
                 tails = p.getTails();
                 guess = p.getResponse();
-                loseMoney(w.getBalance(), w.getBets());
-                earnMoney(w.getBalance(), w.getBets());
+                loseMoney();
+                earnMoney();
+                w.setBalance(balance);
                 System.out.println("Your balance is now " + w.getBalance() + " dollars");
                 System.out.println("Player ID: " + p);
                 run = false;
@@ -32,8 +38,10 @@ public class Game
             if (response.equals("Dice game"))
             {
                 Dice d = new Dice();
-                loseDiceMoney(w.getBalance(), w.getBets(), d.getVictory());
-                earnDiceMoney(w.getBalance(), w.getBets(), d.getVictory());
+                victory = d.getVictory();
+                loseDiceMoney();
+                earnDiceMoney();
+                w.setBalance(balance);
                 System.out.println("Your balance is now " + w.getBalance() + " dollars");
                 System.out.println("Player ID: " + p);
                 run = false;
@@ -43,59 +51,60 @@ public class Game
                 Slots slot = new Slots();
                 run = false;
             }
+            response  = s.nextLine();
         }
     }
-    public void loseMoney(int bal, double bets)
+    public void loseMoney()
     {
         if (guess.equals("heads"))
         {
             for(int i = 0; i < tails; i+= 1)
             {
-                bal -= bets;
+                balance -= bets;
             }
         }
         else
         {
             for(int i = 0; i < heads; i+= 1)
             {
-                bal -= bets;
+                balance -= bets;
             }
         }
     }
-    public void earnMoney(int bal, double bets)
+    public void earnMoney()
     {
         if (guess.equals("heads"))
         {
             for(int i = 0; i < heads; i+= 1)
             {
-                bal += bets;
+                balance += bets;
             }
         }
         else
         {
             for(int i = 0; i < tails; i+= 1)
             {
-                bal += bets;
+                balance += bets;
             }
         }
     }
-    public void loseDiceMoney(int bal, double bets, boolean d)
+    public void loseDiceMoney()
     {
-        if (d)
+        if (victory == 1)
         {
             for(int i = 0; i < 1; i+= 1)
             {
-                bal -= bets;
+                balance -= bets;
             }
         }
     }
-    public void earnDiceMoney(int bal, double bets, boolean d)
+    public void earnDiceMoney()
     {
-        if (d)
+        if (victory == 0)
         {
             for(int i = 0; i < 1; i+= 1)
             {
-                bal += bets;
+                balance += bets;
             }
         }
     }

@@ -45,4 +45,8 @@ public class Wallet
     {
         return balance;
     }
+    public void setBalance(int money)
+    {
+        balance = money;
+    }
 }

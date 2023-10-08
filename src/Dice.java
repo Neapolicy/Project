@@ -42,27 +42,20 @@ public class Dice
         System.out.println("The sum of the dices are: " + total);
         System.out.println(getVictory());
     }
-    public boolean getVictory()
+    public int getVictory()
     {
-        for (int i = 0; i < sums.length; i++)
+        if (sums[0] == sums[1] && sums [1] == sums[2])
         {
-            for (int k = 0; k < sums.length; k++)
-            {
-                if (sums[i] != sums[k])
-                {
-                    return false;
-                }
-            }
-            return true;
+            return 0;
         }
         if (total > 10 && prediction == 2)
         {
-            return true;
+            return 0;
         }
         if (total < 11 && prediction == 1)
         {
-            return true;
+            return 0;
         }
-        return false;
+        return 1;
     }
 }
