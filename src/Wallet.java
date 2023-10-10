@@ -11,15 +11,17 @@ public class Wallet
         {
             System.out.println("How much are you betting?(this is rounded to the nearest integer)");
             double betting = s.nextDouble();
-            betting = (int) (betting + 0.5);
-            if ((betting >= Integer.MAX_VALUE || betting <= 0))
+            betting = Math.round(betting);
+            if ((betting >= Integer.MAX_VALUE))
             {
                 System.out.println("Invalid, try again");
-            } else
-            {
-                bet = betting;
-                picking = false;
             }
+            if (betting<0)
+            {
+                betting = Math.abs(betting);
+            }
+            bet = betting;
+            picking = false;
         }
     }
     public void rebet()

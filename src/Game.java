@@ -12,16 +12,16 @@ public class Game
     {
         Player p = new Player();
         p.welcome();
-        Wallet w = new Wallet();
         System.out.println("Dice game, Slots, or Coin flip?");
         Scanner s = new Scanner(System.in);
         String response = s.nextLine();
-        balance = w.getBalance();
-        bets = w.getBets();
         while (run)
         {
             if (response.equals("Coin flip"))
             {
+                Wallet w = new Wallet();
+                balance = w.getBalance();
+                bets = w.getBets();
                 p.playerPreference();
                 p.playerGuess();
                 p.timesFlip();
@@ -32,23 +32,29 @@ public class Game
                 earnMoney();
                 w.setBalance(balance);
                 System.out.println("Your balance is now " + w.getBalance() + " dollars");
-                System.out.println("Player ID: " + p);
+                System.out.println("Player Address: " + p);
                 run = false;
             }
             if (response.equals("Dice game"))
             {
+                Wallet w = new Wallet();
+                balance = w.getBalance();
+                bets = w.getBets();
                 Dice d = new Dice();
                 victory = d.getVictory();
                 loseDiceMoney();
                 earnDiceMoney();
                 w.setBalance(balance);
                 System.out.println("Your balance is now " + w.getBalance() + " dollars");
-                System.out.println("Player ID: " + p);
+                System.out.println("Player Address: " + p);
                 run = false;
             }
             if (response.equals("Slots"))
             {
                 Slots slot = new Slots();
+                System.out.println("The current Jackpot is " + slot.getJackpot());
+                slot.generateSlot();
+                slot.slotReturn();
                 run = false;
             }
             response  = s.nextLine();
