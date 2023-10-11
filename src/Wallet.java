@@ -24,6 +24,9 @@ public class Wallet
             picking = false;
         }
     }
+    public Wallet(String w)
+    {
+    }
     public void rebet()
     {
         System.out.println("So,how much are you betting?(this is rounded to the nearest integer)");

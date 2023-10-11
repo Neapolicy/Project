@@ -51,10 +51,20 @@ public class Game
             }
             if (response.equals("Slots"))
             {
+                bets = 10;
+                victory = 1;
+                Wallet w = new Wallet("w");
+                balance = w.getBalance();
+                loseDiceMoney();
                 Slots slot = new Slots();
+                bets = slot.getJackpot();
                 System.out.println("The current Jackpot is " + slot.getJackpot());
                 slot.generateSlot();
-                slot.slotReturn();
+                victory = slot.slotWinOrLose();
+                earnDiceMoney();
+                w.setBalance(balance);
+                System.out.println("Your balance is now " + w.getBalance() + " dollars");
+                System.out.println("Player Address: " + p);
                 run = false;
             }
             response  = s.nextLine();

@@ -1,4 +1,5 @@
 import java.util.Random;
+import java.util.Arrays;
 public class Slots
 {
     Random rand = new Random();
@@ -10,7 +11,7 @@ public class Slots
     }
 
     //generates a string with 3 random numbers. These will be the result for the slot machine
-    public String generateSlot()
+    public void generateSlot()
     {
         while(slotValues.length() < 3)
         {
@@ -26,25 +27,12 @@ public class Slots
     //uses compareto() function rather then subtraction
     public int slotWinOrLose()
     {
-        slotValues = generateSlot();
-        String firstSlot = slotValues.substring(0,1);
-        String secondSlot = slotValues.substring(1,2);
-        String thirdSlot = slotValues.substring(2,3);
-        if(firstSlot.compareTo(secondSlot) == 0 && secondSlot.compareTo(thirdSlot) == 0)
+        for(int i = 0; i < slotValues.length; i++)
         {
-            return 1;
-        }
-        else if(firstSlot.compareTo(secondSlot) == 1 && secondSlot.compareTo(thirdSlot) == 1)
-        {
-            return 2;
-        }
-        else if(firstSlot.compareTo(secondSlot) == -1 && secondSlot.compareTo(thirdSlot) == -1)
-        {
-            return 2;
-        }
-        else
-        {
-            return -1;
+            if (slotValues[i] == 7)
+            {
+                tally ++;
+            }
         }
     }
     public void slotReturn()
