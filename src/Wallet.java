@@ -30,7 +30,7 @@ public class Wallet
             }
             else
             {
-                System.out.println("Are you braindead? You can't bet that");
+                System.out.println("By any chance, do you suffer from brainrot? Cause' you can't bet that!");
             }
             betting = s.nextDouble();
         }
