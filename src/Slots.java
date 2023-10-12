@@ -9,6 +9,7 @@ public class Slots
     public Slots()
     {
         System.out.println("So you picked slots, huh? \nThere will be NO refunds.");
+        System.out.println("The winning numbers are : 777");
     }
 
     //generates a string with 3 random numbers. These will be the result for the slot machine
