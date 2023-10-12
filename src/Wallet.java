@@ -5,41 +5,37 @@ public class Wallet
     private double bet;
     private boolean picking = true;
     private final Scanner s = new Scanner(System.in);
-    public Wallet()
+    private int times;
+    public boolean checkDebt()
     {
-        while (picking)
+        if (balance <= 0)
         {
-            System.out.println("How much are you betting?(this is rounded to the nearest integer)");
-            double betting = s.nextDouble();
-            betting = Math.round(betting);
-            if ((betting >= Integer.MAX_VALUE))
-            {
-                System.out.println("Invalid, try again");
-            }
-            if (betting<0)
-            {
-                betting = Math.abs(betting);
-            }
-            bet = betting;
-            picking = false;
+            return true;
         }
-    }
-    public Wallet(String w)
-    {
+        return false;
     }
     public void rebet()
     {
-        System.out.println("So,how much are you betting?(this is rounded to the nearest integer)");
+        times = 0;
+        picking = true;
+        System.out.println("\nSo, how much are you betting? (this is rounded to the nearest integer)");
         double betting = s.nextDouble();
-        betting = (int) (betting + 0.5);
-        if ((betting >= Integer.MAX_VALUE || betting <= 0))
+        betting = Math.round(betting);
+        while ((Math.abs(betting) >= Integer.MAX_VALUE) || Math.abs(betting) > balance)
         {
-            System.out.println("Invalid, try again");
-        } else
-        {
-            bet = betting;
-            picking = false;
+            times += 1;
+            if (times <= 10)
+            {
+                System.out.println("You can't bet that! Try again. ");
+            }
+            else
+            {
+                System.out.println("Are you braindead? You can't bet that");
+            }
+            betting = s.nextDouble();
         }
+        bet = Math.abs(betting);
+        picking = false;
     }
     public double getBets()
     {
