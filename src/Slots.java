@@ -6,7 +6,7 @@ public class Slots
     int[] slotValues = {};
     int jackpot = 5000;
     private int tally;
-    public Slots()
+    public void slotIntro()
     {
         System.out.println("So you picked slots, huh? \nThere will be NO refunds.");
         System.out.println("The winning numbers are : 777");
@@ -37,11 +37,22 @@ public class Slots
                 tally ++;
             }
         }
-        if (tally == 3)
+        if (tally == slotValues.length)
         {
             return 0;
         }
         return 1;
+    }
+    public void setJackpot(int value)
+    {
+        if (value == 1)
+        {
+            jackpot += 5;
+        }
+        if (value == 0)
+        {
+            jackpot = 5000;
+        }
     }
     public int getJackpot()
     {
