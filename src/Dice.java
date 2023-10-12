@@ -6,7 +6,7 @@ public class Dice
     private int[] sums = {};
     private int prediction;
     private Scanner s = new Scanner(System.in);
-    private int total = 0;
+    private int total;
     public Dice()
     {
         System.out.print("Dice eh? \nWell, here are the rules:");
