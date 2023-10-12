@@ -10,16 +10,18 @@ public class Game
     private int victory;
     public Game()
     {
+        Slots slot = new Slots();
         Player p = new Player();
+        Wallet w = new Wallet();
         p.welcome();
-        System.out.println("Dice game, Slots, or Coin flip?");
+        System.out.println("\nDice game, Slots, or Coin flip?\nSlots is $10 per try\nType \"quit\" to quit");
         Scanner s = new Scanner(System.in);
         String response = s.nextLine();
         while (run)
         {
             if (response.equals("Coin flip"))
             {
-                Wallet w = new Wallet();
+                w.rebet();
                 balance = w.getBalance();
                 bets = w.getBets();
                 p.playerPreference();
@@ -31,13 +33,11 @@ public class Game
                 loseMoney();
                 earnMoney();
                 w.setBalance(balance);
-                System.out.println("Your balance is now " + w.getBalance() + " dollars");
-                System.out.println("Player Address: " + p);
-                run = false;
+                System.out.println("\nYour balance is now $" + w.getBalance());
             }
             if (response.equals("Dice game"))
             {
-                Wallet w = new Wallet();
+                w.rebet();
                 balance = w.getBalance();
                 bets = w.getBets();
                 Dice d = new Dice();
@@ -45,28 +45,39 @@ public class Game
                 loseDiceMoney();
                 earnDiceMoney();
                 w.setBalance(balance);
-                System.out.println("Your balance is now " + w.getBalance() + " dollars");
-                System.out.println("Player Address: " + p);
-                run = false;
+                System.out.println("\nYour balance is now $" + w.getBalance());
             }
             if (response.equals("Slots"))
             {
+                slot.slotIntro();
                 bets = 10;
                 victory = 1;
-                Wallet w = new Wallet("w");
                 balance = w.getBalance();
                 loseDiceMoney();
-                Slots slot = new Slots();
                 bets = slot.getJackpot();
                 System.out.println("The current Jackpot is " + slot.getJackpot());
+                System.out.println("You pay $10 to spin the slot machine.");
                 slot.generateSlot();
                 victory = slot.slotWinOrLose();
+                slot.setJackpot(victory);
                 earnDiceMoney();
                 w.setBalance(balance);
-                System.out.println("Your balance is now " + w.getBalance() + " dollars");
+                System.out.println("\nYour balance is now $" + w.getBalance());
+                System.out.println("The Jackpot is now $" + slot.getJackpot() + "\nKeep trying!");
+            }
+            if (response.equals("quit"))
+            {
+                System.out.println("Have a nice day!");
                 System.out.println("Player Address: " + p);
                 run = false;
+                break;
             }
+            if(w.checkDebt())
+            {
+                System.out.println("\nYou're in debt! What a loser! Get out!");
+                break;
+            }
+            System.out.println("\nDice game, Slots, or Coin flip?\nSlots is $10 per try\nType \"quit\" to quit");
             response  = s.nextLine();
         }
     }
