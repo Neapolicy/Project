@@ -9,10 +9,10 @@ public class Dice
     private int total;
     public Dice()
     {
-        System.out.print("Dice eh? \nWell, here are the rules:");
-        System.out.println("Predict the sum of the rolls of 3 dices correctly to win");
-        System.out.println("Getting a 3 of the same number will cause you to win, regardless of guess");
-        System.out.println("Now, make your prediction \nWill the sum to from 3-10(1), or 11-18(2)?");
+        System.out.print("Dice eh? \nWell, here are the rules:\n");
+        System.out.println("  -Predict the sum of the rolls of 3 dices correctly to win");
+        System.out.println("  -Getting a 3 of the same number will cause you to win, regardless of guess\n");
+        System.out.println("Now, make your prediction \nWill the sum be from 3-10(1), or 11-18(2)?");
         prediction = s.nextInt();
         if (prediction > 2 || prediction < 0)
         {
@@ -40,7 +40,7 @@ public class Dice
             total = sums[i] + total;
         }
         System.out.println("The sum of the dices are: " + total);
-        System.out.println(getVictory());
+        getVictory();
     }
     public int getVictory()
     {
