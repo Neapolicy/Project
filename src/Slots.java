@@ -4,6 +4,7 @@ public class Slots
 {
     Random rand = new Random();
     int jackpot = 5000;
+    int[] slotValues = {};
     private int tally;
     public void slotIntro()
     {
@@ -14,6 +15,7 @@ public class Slots
     //generates a string with 3 random numbers. These will be the result for the slot machine
     public void generateSlot()
     {
+        int[] slotValues = new int[]{};
         for(int i = 0; i < 3; i+= 1)
         {
             int random_int = rand.nextInt(6) + 1;
