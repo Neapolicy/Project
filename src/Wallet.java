@@ -35,7 +35,6 @@ public class Wallet
             betting = s.nextDouble();
         }
         bet = Math.abs(betting);
-        picking = false;
     }
     public double getBets()
     {

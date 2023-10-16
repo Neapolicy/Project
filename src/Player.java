@@ -17,7 +17,7 @@ public class Player
 
     public void playerPreference()
     {
-        System.out.println("Do you Awant a rigged coin flip or fair one?");
+        System.out.println("Do you want a rigged coin flip or fair one?");
         final String res = s.nextLine();
         if (res.equals("rigged"))
         {
@@ -35,7 +35,7 @@ public class Player
         String answer = s.nextLine();
         while (run)
         {
-            if (answer.equals("heads") || (answer.equals("tails")))
+            if (answer.contains("head") || (answer.contains("tail")))
             {
                 run = false;
             }

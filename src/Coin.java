@@ -40,11 +40,11 @@ public class Coin
         System.out.println("The coin has landed on heads " + h + " " + time + "\nThe coin has landed on tails " + t + " " + time);
         double proportionOfTails = ((double) t /(t + h));
         System.out.println("The coin has landed tails " + (int)(proportionOfTails * 100)+ " percent of the time.");
-        if ((response.equals("heads") && proportionOfTails>=60) || (response.equals("tails") && proportionOfTails<=45))
+        if ((response.contains("head") && proportionOfTails<=60) || (response.contains("tail") && proportionOfTails<=45))
         {
             System.out.println("You're off your game, you're better than this, aren't you?");
         }
-        else if ((response.equals("heads") && proportionOfTails<=45) || (response.equals("tails") && proportionOfTails>=60))
+        else if ((response.contains("head") && proportionOfTails>=45) || (response.contains("tail") && proportionOfTails>=60))
         {
             System.out.println("Now that's a gamblers spirit! Keep at it and you'll be rich in no time!");
         }

@@ -17,9 +17,9 @@ public class Game
         System.out.println("\nDice game, Slots, or Coin flip?\nSlots is $10 per try\nType \"quit\" to quit");
         Scanner s = new Scanner(System.in);
         String response = s.nextLine();
-        while (run)
+        while (true)
         {
-            if (response.equals("Coin flip"))
+            if (response.equalsIgnoreCase("Coin flip"))
             {
                 w.rebet();
                 balance = w.getBalance();
@@ -35,7 +35,7 @@ public class Game
                 w.setBalance(balance);
                 System.out.println("\nYour balance is now $" + w.getBalance());
             }
-            if (response.equals("Dice game"))
+            if (response.equalsIgnoreCase("Dice game"))
             {
                 w.rebet();
                 balance = w.getBalance();
@@ -47,7 +47,7 @@ public class Game
                 w.setBalance(balance);
                 System.out.println("\nYour balance is now $" + w.getBalance());
             }
-            if (response.equals("Slots"))
+            if (response.equalsIgnoreCase("Slots"))
             {
                 slot.slotIntro();
                 bets = 10;
@@ -83,7 +83,7 @@ public class Game
     }
     public void loseMoney()
     {
-        if (guess.equals("heads"))
+        if (guess.contains("head"))
         {
             for(int i = 0; i < tails; i+= 1)
             {
@@ -100,7 +100,7 @@ public class Game
     }
     public void earnMoney()
     {
-        if (guess.equals("heads"))
+        if (guess.contains("head"))
         {
             for(int i = 0; i < heads; i+= 1)
             {
@@ -119,20 +119,14 @@ public class Game
     {
         if (victory == 1)
         {
-            for(int i = 0; i < 1; i+= 1)
-            {
-                balance -= bets;
-            }
+            this.balance -= bets;
         }
     }
     public void earnDiceMoney()
     {
         if (victory == 0)
         {
-            for(int i = 0; i < 1; i+= 1)
-            {
-                balance += bets;
-            }
+            this.balance += bets;
         }
     }
 }
