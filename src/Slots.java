@@ -3,7 +3,6 @@ import java.util.Arrays;
 public class Slots
 {
     Random rand = new Random();
-    int[] slotValues = {};
     int jackpot = 5000;
     private int tally;
     public void slotIntro()

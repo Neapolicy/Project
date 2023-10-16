@@ -4,7 +4,6 @@ public class Game
     private String guess;
     private int tails;
     private int heads;
-    private boolean run = true;
     private int balance;
     private double bets;
     private int victory;
@@ -69,7 +68,6 @@ public class Game
             {
                 System.out.println("Have a nice day!");
                 System.out.println("Player Address: " + p);
-                run = false;
                 break;
             }
             if(w.checkDebt())

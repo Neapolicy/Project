@@ -3,21 +3,15 @@ public class Wallet
 {
     private int balance = 100;
     private double bet;
-    private boolean picking = true;
     private final Scanner s = new Scanner(System.in);
     private int times;
     public boolean checkDebt()
     {
-        if (balance <= 0)
-        {
-            return true;
-        }
-        return false;
+        return balance <= 0;
     }
     public void rebet()
     {
         times = 0;
-        picking = true;
         System.out.println("\nSo, how much are you betting? (this is rounded to the nearest integer)");
         double betting = s.nextDouble();
         betting = Math.round(betting);
