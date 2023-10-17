@@ -11,6 +11,7 @@ public class Game
     {
         Advertisements ads = new Advertisements();
         Slots slot = new Slots();
+        System.out.println("Your current balance is $100");
         Player p = new Player();
         Wallet w = new Wallet();
         p.welcome();
