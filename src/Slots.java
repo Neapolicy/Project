@@ -15,7 +15,7 @@ public class Slots
     //generates a string with 3 random numbers. These will be the result for the slot machine
     public void generateSlot()
     {
-        int[] slotValues = new int[]{};
+        slotValues = new int[]{};
         for(int i = 0; i < 3; i+= 1)
         {
             int random_int = rand.nextInt(6) + 1;
@@ -48,7 +48,7 @@ public class Slots
     {
         if (value == 1)
         {
-            jackpot += 5;
+            jackpot += 50;
         }
         if (value == 0)
         {
