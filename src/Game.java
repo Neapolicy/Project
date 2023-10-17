@@ -9,6 +9,7 @@ public class Game
     private int victory;
     public Game()
     {
+        Advertisements ads = new Advertisements();
         Slots slot = new Slots();
         Player p = new Player();
         Wallet w = new Wallet();
@@ -33,6 +34,7 @@ public class Game
                 earnMoney();
                 w.setBalance(balance);
                 System.out.println("\nYour balance is now $" + w.getBalance());
+                ads.adsPrint();
             }
             if (response.equalsIgnoreCase("Dice game"))
             {
@@ -45,6 +47,7 @@ public class Game
                 earnDiceMoney();
                 w.setBalance(balance);
                 System.out.println("\nYour balance is now $" + w.getBalance());
+                ads.adsPrint();
             }
             if (response.equalsIgnoreCase("Slots"))
             {
@@ -63,6 +66,7 @@ public class Game
                 w.setBalance(balance);
                 System.out.println("\nYour balance is now $" + w.getBalance());
                 System.out.println("The Jackpot is now $" + slot.getJackpot() + "\nKeep trying!");
+                ads.adsPrint();
             }
             if (response.equals("quit"))
             {
