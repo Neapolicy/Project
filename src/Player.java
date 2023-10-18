@@ -66,7 +66,7 @@ public class Player
 
     public void welcome()
     {
-        System.out.println("Welcome to the gambling den, " + name + "!" );
+        System.out.println("Welcome to Ferguson's Casino, " + name + "!" );
     }
     public int getHeads()
     {
