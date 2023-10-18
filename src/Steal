@@ -1,0 +1,53 @@
+import java.util.Random;
+import java.util.Scanner;
+import java.util.HashMap;
+import java.util.Map;
+public class Steal
+{
+    private int stealAmount;
+    Map<String, Integer> dictionary = new HashMap<>();
+    private int balance;
+    private String targetType;
+    private final Scanner s = new Scanner(System.in);
+    Random rand = new Random();
+    public Steal(int balance)
+    {
+        this.balance = balance;
+        System.out.println("How much do you want to steal? (Max is 10x your current balance)\nKeep in mind that you may get caught stealing and have to pay a fine for stealing!");
+        stealAmount = s.nextInt();
+        while (stealAmount > (10 * balance))
+        {
+            System.out.println("You can't steal that much money!!");
+            System.out.println("How much do you want to steal?");
+            stealAmount = s.nextInt();
+        }
+        stealEvent();
+    }
+    public void stealEvent()
+    {
+        int target = rand.nextInt(10) + 1;
+        switch (target)
+        {
+            case 1 -> targetType = "Homeless Man1";
+            case 2 -> targetType = "Drunk Alcoholic1";
+            case 3 -> targetType = "A Kid3";
+            case 4 -> targetType = "Single Mother of Three4";
+            case 5 -> targetType = "Nintendo CEO2";
+            case 6 -> targetType = "Elon Musk2";
+            case 7 -> targetType = "Your Landlord5";
+            case 8 -> targetType = "Minimum Wage Worker6";
+            case 9 -> targetType = "Casino Owner2";
+            case 10 -> targetType = "The President2";
+        }
+        specialEvents(targetType);
+    }
+    public void specialEvents(String t)
+    {
+        targetType = t.substring(t.length()-1);
+        intro();
+    }
+    public void intro()
+    {
+        System.out.println("You are trying to rob: " + targetType);
+    }
+}
