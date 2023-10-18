@@ -37,7 +37,7 @@ public class Game
                 System.out.println("\nYour balance is now $" + w.getBalance());
                 ads.adsPrint();
             }
-            if (response.equalsIgnoreCase("Dice game"))
+            else if (response.equalsIgnoreCase("Dice game"))
             {
                 w.rebet();
                 balance = w.getBalance();
@@ -50,7 +50,7 @@ public class Game
                 System.out.println("\nYour balance is now $" + w.getBalance());
                 ads.adsPrint();
             }
-            if (response.equalsIgnoreCase("Slots"))
+            else if (response.equalsIgnoreCase("Slots"))
             {
                 slot.slotIntro();
                 bets = 10;
@@ -68,6 +68,11 @@ public class Game
                 System.out.println("\nYour balance is now $" + w.getBalance());
                 System.out.println("The Jackpot is now $" + slot.getJackpot() + "\nKeep trying!");
                 ads.adsPrint();
+            }
+            else if (response.equalsIgnoreCase("steal"))
+            {
+                balance = w.getBalance();
+                Steal steel = new Steal(balance);
             }
             if (response.equals("quit"))
             {
