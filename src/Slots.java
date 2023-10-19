@@ -3,7 +3,7 @@ import java.util.Arrays;
 public class Slots
 {
     Random rand = new Random();
-    int jackpot = 5000;
+    int jackpot = 1000000;
     int[] slotValues = {};
     private int tally;
     public void slotIntro()
@@ -43,11 +43,11 @@ public class Slots
     {
         if (value == 1)
         {
-            jackpot += 50;
+            jackpot += 1000;
         }
         if (value == 0)
         {
-            jackpot = 5000;
+            jackpot = 1000000;
         }
     }
     public int getJackpot()

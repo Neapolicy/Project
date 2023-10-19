@@ -4,7 +4,10 @@ import java.util.HashMap;
 import java.util.Map;
 public class Steal
 {
-    private int stealAmount;
+    private int riskLevel;
+    private int targetValue;
+    private int targetLevel;
+    private int rollVal;
     Map<Integer, String> dictionary = new HashMap<>();
     Map<String, Integer> dictionaryTwo = new HashMap<>();
     private int balance;
@@ -15,29 +18,28 @@ public class Steal
     {
         putValues();
         this.balance = balance;
-        System.out.println("How much do you want to steal? (Max is 10x your current balance)\nKeep in mind that you may get caught stealing and have to pay a fine for stealing!");
-        stealAmount = s.nextInt();
-        while (stealAmount > (10 * balance))
+        System.out.println("Select your risk level, from 1-10");
+        riskLevel = s.nextInt();
+        while (riskLevel > 10 || riskLevel < 1)
         {
-            System.out.println("You can't steal that much money!!");
-            System.out.println("How much do you want to steal?");
-            stealAmount = s.nextInt();
+            System.out.println("Invalid risk level");
+            System.out.println("Select your risk level, from 1-10");
+            riskLevel = s.nextInt();
         }
         stealEvent();
     }
     public void stealEvent()
     {
-        int target = rand.nextInt(10) + 1;
-        targetType = dictionary.get(target);
-        specialEvents();
+        targetType = dictionary.get(riskLevel);
+        intro();
     }
     public void specialEvents()
     {
-        intro();
-        int targetValue = dictionaryTwo.get(targetType);
+        targetValue = dictionaryTwo.get(targetType);
         switch (targetValue)
         {
             case 1:
+                eventOne();
                 break;
             case 2:
                 break;
@@ -54,6 +56,24 @@ public class Steal
     public void intro()
     {
         System.out.println("You are trying to rob: " + targetType);
+        System.out.println("Would you like to proceed?");
+        s.nextLine(); // Trust me this is absolutely necessary because if this line isn't included it won't take your response
+        String answer = s.nextLine();
+        while (true)
+        {
+            if (answer.contains("ye"))
+            {
+                specialEvents();
+                break;
+            }
+            else if (answer.contains("no"))
+            {
+                System.out.print("You backed out, coward.");
+                break;
+            }
+            System.out.println("Would you like to proceed?\n");
+            answer = s.nextLine();
+        }
     }
     public void putValues()
     {
@@ -61,22 +81,42 @@ public class Steal
         dictionary.put(2,"Drunk Alcoholic");
         dictionary.put(3,"A Kid");
         dictionary.put(4,"Single Mother of Three");
-        dictionary.put(5,"Nintendo CEO");
+        dictionary.put(5,"Salary Worker");
         dictionary.put(6,"Elon Musk");
         dictionary.put(7,"Your Landlord");
         dictionary.put(8,"Minimum Wage Worker");
         dictionary.put(9,"Casino Owner");
         dictionary.put(10,"The President");
 
-        dictionaryTwo.put("Homeless Man", 1);
+        dictionaryTwo.put("Homeless Man", 4);
         dictionaryTwo.put("Drunk Alcoholic", 1);
-        dictionaryTwo.put("A Kid", 3);
-        dictionaryTwo.put("Single Mother of Three", 4);
-        dictionaryTwo.put("Nintendo CEO", 2);
-        dictionaryTwo.put("Elon Musk", 2);
+        dictionaryTwo.put("A Kid", 2);
+        dictionaryTwo.put("Single Mother of Three", 3);
+        dictionaryTwo.put("Salary Worker", 4);
+        dictionaryTwo.put("Elon Musk", 4);
         dictionaryTwo.put("Your Landlord", 5);
-        dictionaryTwo.put("Minimum Wage Worker", 6);
-        dictionaryTwo.put("Casino Owner", 2);
-        dictionaryTwo.put("The President", 2);
+        dictionaryTwo.put("Minimum Wage Worker", 3);
+        dictionaryTwo.put("Casino Owner", 6);
+        dictionaryTwo.put("The President", 6);
+    }
+    public void eventOne()
+    {
+        rollVal = rand.nextInt(1, 101);
+        targetLevel = 100;
+        int multiplier = factorial(targetValue);
+        if (rollVal <= targetLevel)
+        {
+            balance = balance + (rand.nextInt(50, 201) * multiplier);
+        }
+    }
+    public int factorial(int t)
+    {
+        int i,fact=1;
+        int number= t;//It is the number to calculate factorial
+        for(i=1;i<=number;i++){
+            fact=fact*i;
+        }
+        System.out.println("Factorial of "+number+" is: "+fact);
+        return fact;
     }
 }
