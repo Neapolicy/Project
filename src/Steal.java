@@ -6,6 +6,7 @@ public class Steal
 {
     private int riskLevel;
     private int targetValue = 5;
+    private int temp;
     Map<Integer, String> dictionary = new HashMap<>();
     Map<String, Integer> dictionaryTwo = new HashMap<>();
     private int balance;
@@ -106,6 +107,12 @@ public class Steal
         dictionaryTwo.put("Casino Owner", 6);
         dictionaryTwo.put("The President", 6);
     }
+    public void loseMoney()
+    {
+        temp = rand.nextInt(50, 201) * targetValue;
+        balance -= temp;
+        System.out.println("Wow! You failed to rob " + targetType + " and now have to pay a fine of $" + temp);
+    }
     public void reroll()
     {
         eventChance = rand.nextInt(3) + 1;
@@ -130,14 +137,14 @@ public class Steal
     {
         reroll();
         System.out.println(targetType + " " + eventDesc);
-        System.out.println("Do you wish to rob, wait, or leave?");
+        System.out.println("Do you wish to rob, wait and see, or leave?");
         String answer = s.nextLine();
+        int times = 0;
         while (true)
         {
             if (answer.contains("rob"))
             {
                 rollVal = rand.nextInt(1, 100) + 1;
-                int temp;
                 if (rollVal <= targetLevel)
                 {
                     temp = rand.nextInt(50, 201) * factorial(targetValue);
@@ -148,16 +155,24 @@ public class Steal
                 }
                 else
                 {
-                    temp = rand.nextInt(50, 201) * targetValue;
-                    balance -= temp;
-                    System.out.println("Wow! You failed to rob " + targetType + " and now have to pay a fine of $" + temp);
+                    loseMoney();
                 }
                 break;
             }
             else if (answer.contains("wait"))
             {
-                reroll();
-                System.out.println(targetType + " " + eventDesc);
+                if (times > 3)
+                {
+                    System.out.println("Your target saw you and has left the area!");
+                    loseMoney();
+                    break;
+                }
+                else
+                {
+                    times += 4;
+                    reroll();
+                    System.out.println(targetType + " " + eventDesc);
+                }
             }
             else if (answer.contains("leave"))
             {
