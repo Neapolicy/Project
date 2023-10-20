@@ -52,11 +52,7 @@ public class Advertisements
     public void adsPrint()
     {
         Integer adsNum = rand.nextInt(100)+1;
-        if (dictionary.get(adsNum) == null)
-        {
-            System.out.print("");
-        }
-        else
+        if (dictionary.get(adsNum) != null)
         {
             System.out.println(dictionary.get(adsNum));
         }

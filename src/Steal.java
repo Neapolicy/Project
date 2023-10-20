@@ -10,10 +10,8 @@ public class Steal
     Map<Integer, String> dictionary = new HashMap<>();
     Map<String, Integer> dictionaryTwo = new HashMap<>();
     private int balance;
-    private int rollVal;
     private int targetLevel;
     private String targetType;
-    private int eventChance;
     private String eventDesc;
     private final Scanner s = new Scanner(System.in);
     Random rand = new Random();
@@ -39,26 +37,8 @@ public class Steal
     public void specialEvents()
     {
         targetValue = dictionaryTwo.get(targetType);
-        switch (targetValue)
-        {
-            case 1:
-                eventOne();
-                break;
-            case 2:
-                eventOne();
-                break;
-            case 3:
-                eventOne();
-                break;
-            case 4:
-                eventOne();
-                break;
-            case 5:
-                eventOne();
-                break;
-            case 6:
-                eventOne();
-                break;
+        switch (targetValue) {
+            case 1, 2, 6, 5, 4, 3 -> eventOne();
         }
     }
     public void intro()
@@ -89,7 +69,7 @@ public class Steal
         dictionary.put(2,"Drunk Alcoholic");
         dictionary.put(3,"A Kid");
         dictionary.put(4,"Single Mother of Three");
-        dictionary.put(5,"Salary Worker");
+        dictionary.put(5,"High Salary Worker");
         dictionary.put(6,"Elon Musk");
         dictionary.put(7,"Your Landlord");
         dictionary.put(8,"Minimum Wage Worker");
@@ -100,11 +80,11 @@ public class Steal
         dictionaryTwo.put("Drunk Alcoholic", 1);
         dictionaryTwo.put("A Kid", 2);
         dictionaryTwo.put("Single Mother of Three", 3);
-        dictionaryTwo.put("Salary Worker", 4);
-        dictionaryTwo.put("Elon Musk", 4);
-        dictionaryTwo.put("Your Landlord", 5);
         dictionaryTwo.put("Minimum Wage Worker", 3);
-        dictionaryTwo.put("Casino Owner", 6);
+        dictionaryTwo.put("High Salary Worker", 4);
+        dictionaryTwo.put("Your Landlord", 5);
+        dictionaryTwo.put("Casino Owner", 5);
+        dictionaryTwo.put("Elon Musk", 6);
         dictionaryTwo.put("The President", 6);
     }
     public void loseMoney()
@@ -115,23 +95,76 @@ public class Steal
     }
     public void reroll()
     {
-        eventChance = rand.nextInt(3) + 1;
+        int eventChance = rand.nextInt(3) + 1;
         switch (eventChance)
         {
-            case 1:
-                eventDesc = "is currently sleeping.";
+            case 1 ->
+            {
+                eventDesc = changeDesc();
                 targetLevel = 95 - (15 * (targetValue));
-                break;
-            case 2:
-                eventDesc = "is currently walking the streets.";
+            }
+            case 2 ->
+            {
+                eventDesc = changeDesc();
                 targetLevel = 93 - (15 * (targetValue));
-                break;
-            case 3:
-                eventDesc = "is currently harassing a pedestrian.";
+            }
+            case 3 ->
+            {
+                eventDesc = changeDesc();
                 targetLevel = 91 - (15 * (targetValue));
-                break;
+            }
         }
+    }
+    public int roll()
+    {
+        return rand.nextInt(1,4);
+    }
+    public String personEvent(String string1, String string2, String string3)
+    {
+        int roll = roll();
+        switch (roll)
+        {
+            case 1:
+            {
+                return string1;
+            }
+            case 2:
+            {
+                return string2;
+            }
+            case 3:
+            {
+                return string3;
+            }
+        }
+        return null;
+    }
+    public String changeDesc()
+    {
+        switch(targetValue)
+        {
+            case 1, 2:
+            {
+                personEvent("is currently singing.","is currently sleeping.","is currently walking the streets.");
+            }
+            case 3:
+            {
+                personEvent("is currently returning home from work.","is currently walking home with groceries.","is currently sleeping.");
+            }
+            case 4:
+            {
+                personEvent("is getting that thong out they bussy","is currently sleeping.","is currently walking the streets.");
+            }
+            case 5:
+            {
+                personEvent("Is collecting money from ", "", "");
 
+            }
+            case 6:
+            {
+                personEvent("", "", "");
+            }
+        }
     }
     public void eventOne()
     {
@@ -139,12 +172,12 @@ public class Steal
         System.out.println(targetType + " " + eventDesc);
         System.out.println("Do you wish to rob, wait and see, or leave?");
         String answer = s.nextLine();
-        int times = 0;
+        boolean times = true;
         while (true)
         {
             if (answer.contains("rob"))
             {
-                rollVal = rand.nextInt(1, 100) + 1;
+                int rollVal = rand.nextInt(1, 100) + 1;
                 if (rollVal <= targetLevel)
                 {
                     temp = rand.nextInt(50, 201) * factorial(targetValue);
@@ -161,7 +194,7 @@ public class Steal
             }
             else if (answer.contains("wait"))
             {
-                if (times > 3)
+                if (!times)
                 {
                     System.out.println("Your target saw you and has left the area!");
                     loseMoney();
@@ -169,7 +202,7 @@ public class Steal
                 }
                 else
                 {
-                    times += 4;
+                    times = false;
                     reroll();
                     System.out.println(targetType + " " + eventDesc);
                 }
