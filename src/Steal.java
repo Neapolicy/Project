@@ -196,7 +196,7 @@ public class Steal
             {
                 if (!times)
                 {
-                    System.out.println("Your target saw you and has left the area!");
+                    System.out.println("You have lost your target.");
                     loseMoney();
                     break;
                 }
