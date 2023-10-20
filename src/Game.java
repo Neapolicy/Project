@@ -71,9 +71,10 @@ public class Game
             }
             else if (response.equalsIgnoreCase("steal"))
             {
-                balance = w.getBalance();
-                Steal steel = new Steal(balance);
-                balance = steel.getBalance();
+                Steal steel = new Steal(w.getBalance());
+                this.balance = steel.getBalance();
+                w.setBalance(balance);
+                System.out.print(balance);
             }
             if (response.equals("quit"))
             {

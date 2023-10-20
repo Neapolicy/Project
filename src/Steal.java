@@ -9,7 +9,8 @@ public class Steal
     Map<Integer, String> dictionary = new HashMap<>();
     Map<String, Integer> dictionaryTwo = new HashMap<>();
     private int balance;
-    private int multiplier;
+    private int rollVal;
+    private int targetLevel;
     private String targetType;
     private final Scanner s = new Scanner(System.in);
     Random rand = new Random();
@@ -35,21 +36,25 @@ public class Steal
     public void specialEvents()
     {
         targetValue = dictionaryTwo.get(targetType);
-        multiplier = factorial(targetValue);
         switch (targetValue)
         {
             case 1:
                 eventOne();
                 break;
             case 2:
+                eventOne();
                 break;
             case 3:
+                eventOne();
                 break;
             case 4:
+                eventOne();
                 break;
             case 5:
+                eventOne();
                 break;
             case 6:
+                eventOne();
                 break;
         }
     }
@@ -57,8 +62,8 @@ public class Steal
     {
         System.out.println("You are trying to rob: " + targetType);
         System.out.println("Would you like to proceed?");
-        s.nextLine(); // Trust me this is absolutely necessary because if this line isn't included it won't take your response
-        String answer = s.nextLine();
+        String answer = s.nextLine(); // Trust me this is absolutely necessary because if this line isn't included it won't take your response
+        answer = s.nextLine();
         while (true)
         {
             if (answer.contains("ye"))
@@ -88,7 +93,7 @@ public class Steal
         dictionary.put(9,"Casino Owner");
         dictionary.put(10,"The President");
 
-        dictionaryTwo.put("Homeless Man", 4);
+        dictionaryTwo.put("Homeless Man", 1);
         dictionaryTwo.put("Drunk Alcoholic", 1);
         dictionaryTwo.put("A Kid", 2);
         dictionaryTwo.put("Single Mother of Three", 3);
@@ -101,12 +106,15 @@ public class Steal
     }
     public void eventOne()
     {
-        int rollVal = rand.nextInt(1, 101);
-        int targetLevel = 1000;
-        int randomVal = rand.nextInt(50, 201);
-        if (rollVal <= targetLevel)
+        rollVal = rand.nextInt(1, 100) + 1;
+        targetLevel = 85;
+        if (rollVal < targetLevel)
         {
-            balance = balance + (randomVal * multiplier);
+            balance += (rand.nextInt(50, 201) * factorial(targetValue));
+        }
+        else
+        {
+            balance -= (rand.nextInt(50, 201) * targetValue);
         }
     }
     public static int factorial(int tVal) {
