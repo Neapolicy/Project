@@ -73,6 +73,7 @@ public class Game
             {
                 balance = w.getBalance();
                 Steal steel = new Steal(balance);
+                balance = steel.getBalance();
             }
             if (response.equals("quit"))
             {

@@ -5,12 +5,11 @@ import java.util.Map;
 public class Steal
 {
     private int riskLevel;
-    private int targetValue;
-    private int targetLevel;
-    private int rollVal;
+    private int targetValue = 5;
     Map<Integer, String> dictionary = new HashMap<>();
     Map<String, Integer> dictionaryTwo = new HashMap<>();
     private int balance;
+    private int multiplier;
     private String targetType;
     private final Scanner s = new Scanner(System.in);
     Random rand = new Random();
@@ -36,6 +35,7 @@ public class Steal
     public void specialEvents()
     {
         targetValue = dictionaryTwo.get(targetType);
+        multiplier = factorial(targetValue);
         switch (targetValue)
         {
             case 1:
@@ -101,22 +101,25 @@ public class Steal
     }
     public void eventOne()
     {
-        rollVal = rand.nextInt(1, 101);
-        targetLevel = 100;
-        int multiplier = factorial(targetValue);
+        int rollVal = rand.nextInt(1, 101);
+        int targetLevel = 1000;
+        int randomVal = rand.nextInt(50, 201);
         if (rollVal <= targetLevel)
         {
-            balance = balance + (rand.nextInt(50, 201) * multiplier);
+            balance = balance + (randomVal * multiplier);
         }
     }
-    public int factorial(int t)
-    {
-        int i,fact=1;
-        int number= t;//It is the number to calculate factorial
-        for(i=1;i<=number;i++){
-            fact=fact*i;
+    public static int factorial(int tVal) {
+        if (tVal > 0)
+        {
+            return tVal * (factorial(tVal - 1));
+        } else
+        {
+            return 1;
         }
-        System.out.println("Factorial of "+number+" is: "+fact);
-        return fact;
+    }
+    public int getBalance()
+    {
+        return balance;
     }
 }
