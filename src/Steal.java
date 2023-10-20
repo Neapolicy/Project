@@ -106,33 +106,34 @@ public class Steal
         dictionaryTwo.put("Casino Owner", 6);
         dictionaryTwo.put("The President", 6);
     }
+    public void reroll()
+    {
+        eventChance = rand.nextInt(3) + 1;
+        switch (eventChance)
+        {
+            case 1:
+                eventDesc = "is currently sleeping.";
+                targetLevel = 95;
+                break;
+            case 2:
+                eventDesc = "is currently walking the streets.";
+                targetLevel = 60;
+                break;
+            case 3:
+                eventDesc = "is currently harassing a pedestrian.";
+                targetLevel = 50;
+                break;
+        }
+
+    }
     public void eventOne()
     {
+        reroll();
+        System.out.println(targetType + " " + eventDesc);
+        System.out.println("Do you wish to rob, wait, or leave?");
+        String answer = s.nextLine();
         while (true)
         {
-            eventChance = rand.nextInt(1,5)+1;
-            switch (eventChance)
-            {
-                case 1:
-                    eventDesc = "is currently sleeping.";
-                    targetLevel = 95;
-                case 2:
-                    eventDesc = "is currently walking the streets.";
-                    targetLevel = 60;
-                case 3:
-                    eventDesc = "is currently walking the streets.";
-                    targetLevel = 60;
-                case 4:
-                    eventDesc = "is currently harassing a pedestrian.";
-                    targetLevel = 50;
-                case 5:
-                    eventDesc = "is currently harassing a pedestrian.";
-                    targetLevel = 50;
-
-            }
-            System.out.println(targetType + " " + eventDesc);
-            System.out.println("Do you wish to rob, wait, or leave?");
-            String answer = s.nextLine();
             if (answer.contains("rob"))
             {
                 rollVal = rand.nextInt(1, 100) + 1;
@@ -155,17 +156,16 @@ public class Steal
             }
             else if (answer.contains("wait"))
             {
-                ;
+                reroll();
+                System.out.println(targetType + " " + eventDesc);
             }
             else if (answer.contains("leave"))
             {
-                System.out.println("What a coward. You can't even rob someone.");
+                System.out.println("What a coward. You can't even rob someone.\n");
                 break;
             }
-            else
-            {
-                System.out.println("What does this mean?? You just wait because you don't even know what you want.");
-            }
+            System.out.println("Do you wish to rob, wait, or leave?");
+            answer = s.nextLine();
         }
     }
     public static int factorial(int tVal) {
