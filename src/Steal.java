@@ -12,6 +12,8 @@ public class Steal
     private int rollVal;
     private int targetLevel;
     private String targetType;
+    private int eventChance;
+    private String eventDesc;
     private final Scanner s = new Scanner(System.in);
     Random rand = new Random();
     public Steal(int balance)
@@ -106,22 +108,72 @@ public class Steal
     }
     public void eventOne()
     {
-        rollVal = rand.nextInt(1, 100) + 1;
-        targetLevel = 85;
-        if (rollVal < targetLevel)
+        while (true)
         {
-            balance += (rand.nextInt(50, 201) * factorial(targetValue));
-        }
-        else
-        {
-            balance -= (rand.nextInt(50, 201) * targetValue);
+            eventChance = rand.nextInt(1,5)+1;
+            switch (eventChance)
+            {
+                case 1:
+                    eventDesc = "is currently sleeping.";
+                    targetLevel = 95;
+                case 2:
+                    eventDesc = "is currently walking the streets.";
+                    targetLevel = 60;
+                case 3:
+                    eventDesc = "is currently walking the streets.";
+                    targetLevel = 60;
+                case 4:
+                    eventDesc = "is currently harassing a pedestrian.";
+                    targetLevel = 50;
+                case 5:
+                    eventDesc = "is currently harassing a pedestrian.";
+                    targetLevel = 50;
+
+            }
+            System.out.println(targetType + " " + eventDesc);
+            System.out.println("Do you wish to rob, wait, or leave?");
+            String answer = s.nextLine();
+            if (answer.contains("rob"))
+            {
+                rollVal = rand.nextInt(1, 100) + 1;
+                int temp;
+                if (rollVal <= targetLevel)
+                {
+                    temp = rand.nextInt(50, 201) * factorial(targetValue);
+                    balance += temp;
+                    System.out.println("Congratulations! You successfully robbed: " + targetType);
+                    System.out.println("You successfully stole $" + temp + " from " + targetType);
+
+                }
+                else
+                {
+                    temp = rand.nextInt(50, 201) * targetValue;
+                    balance -= temp;
+                    System.out.println("Wow! You failed to rob " + targetType + " and now have to pay a fine of $" + temp);
+                }
+                break;
+            }
+            else if (answer.contains("wait"))
+            {
+                ;
+            }
+            else if (answer.contains("leave"))
+            {
+                System.out.println("What a coward. You can't even rob someone.");
+                break;
+            }
+            else
+            {
+                System.out.println("What does this mean?? You just wait because you don't even know what you want.");
+            }
         }
     }
     public static int factorial(int tVal) {
         if (tVal > 0)
         {
             return tVal * (factorial(tVal - 1));
-        } else
+        }
+        else
         {
             return 1;
         }
