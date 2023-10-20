@@ -113,15 +113,15 @@ public class Steal
         {
             case 1:
                 eventDesc = "is currently sleeping.";
-                targetLevel = 95;
+                targetLevel = 95 - (15 * (targetValue));
                 break;
             case 2:
                 eventDesc = "is currently walking the streets.";
-                targetLevel = 60;
+                targetLevel = 93 - (15 * (targetValue));
                 break;
             case 3:
                 eventDesc = "is currently harassing a pedestrian.";
-                targetLevel = 50;
+                targetLevel = 91 - (15 * (targetValue));
                 break;
         }
 
