@@ -221,10 +221,7 @@ public class Steal
         {
             return tVal * (factorial(tVal - 1));
         }
-        else
-        {
-            return 1;
-        }
+        return 1;
     }
     public int getBalance()
     {
