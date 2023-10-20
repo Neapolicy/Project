@@ -164,7 +164,7 @@ public class Steal
                 System.out.println("What a coward. You can't even rob someone.\n");
                 break;
             }
-            System.out.println("Do you wish to rob, wait, or leave?");
+            System.out.println("Do you wish to rob em, wait and see, or leave?");
             answer = s.nextLine();
         }
     }
