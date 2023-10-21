@@ -74,7 +74,8 @@ public class Game
                 Steal steel = new Steal(w.getBalance());
                 this.balance = steel.getBalance();
                 w.setBalance(balance);
-                System.out.print(balance);
+                System.out.println("\nYour balance is now $" + w.getBalance());
+                ads.adsPrint();
             }
             if (response.equals("quit"))
             {
