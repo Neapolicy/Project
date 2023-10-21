@@ -127,14 +127,17 @@ public class Steal
             case 1:
             {
                 return string1;
+                break;
             }
             case 2:
             {
                 return string2;
+                break;
             }
             case 3:
             {
                 return string3;
+                break;
             }
         }
         return null;
@@ -146,23 +149,28 @@ public class Steal
             case 1, 2:
             {
                 personEvent("is currently singing.","is currently sleeping.","is currently walking the streets.");
+                break;
             }
             case 3:
             {
                 personEvent("is currently returning home from work.","is currently walking home with groceries.","is currently sleeping.");
+                break;
             }
             case 4:
             {
-                personEvent("is getting that thong out they bussy","is currently sleeping.","is currently walking the streets.");
+                personEvent("is getting that thong out they bussy, play'a.","is currently working.","is currently out partying with friends.");
+                break;
             }
             case 5:
             {
-                personEvent("Is collecting money from ", "", "");
+                personEvent("is collecting money from their patrons.", "is gambling.", "is currently collecting their obligated tip");
+                break;
 
             }
             case 6:
             {
-                personEvent("", "", "");
+                personEvent("is buying their fifth yacht.", "is partying out on a private cruise ship", "is in an important meeting");
+                break;
             }
         }
     }
