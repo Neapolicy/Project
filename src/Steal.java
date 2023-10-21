@@ -100,17 +100,17 @@ public class Steal
         {
             case 1 ->
             {
-                eventDesc = changeDesc();
+                changeDesc();
                 targetLevel = 95 - (15 * (targetValue));
             }
             case 2 ->
             {
-                eventDesc = changeDesc();
+                changeDesc();
                 targetLevel = 93 - (15 * (targetValue));
             }
             case 3 ->
             {
-                eventDesc = changeDesc();
+                changeDesc();
                 targetLevel = 91 - (15 * (targetValue));
             }
         }
@@ -119,30 +119,29 @@ public class Steal
     {
         return rand.nextInt(1,4);
     }
-    public String personEvent(String string1, String string2, String string3)
+    public void personEvent(String string1, String string2, String string3)
     {
         int roll = roll();
         switch (roll)
         {
             case 1:
             {
-                return string1;
+                eventDesc = string1;
                 break;
             }
             case 2:
             {
-                return string2;
+                eventDesc = string2;
                 break;
             }
             case 3:
             {
-                return string3;
+                eventDesc = string3;
                 break;
             }
         }
-        return null;
     }
-    public String changeDesc()
+    public void changeDesc()
     {
         switch(targetValue)
         {
@@ -178,7 +177,7 @@ public class Steal
     {
         reroll();
         System.out.println(targetType + " " + eventDesc);
-        System.out.println("Do you wish to rob, wait and see, or leave?");
+        System.out.println("Do you wish to rob em, wait and see, or leave?");
         String answer = s.nextLine();
         boolean times = true;
         while (true)
