@@ -47,7 +47,7 @@ public class Slots
         }
         if (value == 0)
         {
-            jackpot = 1000000;
+            jackpot = 100000;
         }
     }
     public int getJackpot()
