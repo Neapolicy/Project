@@ -11,9 +11,9 @@ public class Game
     {
         Advertisements ads = new Advertisements();
         Slots slot = new Slots();
-        System.out.println("Your current balance is $100");
-        Player p = new Player();
         Wallet w = new Wallet();
+        System.out.println("Your current balance is " + w.getBalance());
+        Player p = new Player();
         p.welcome();
         System.out.println("\nDice game, Slots, or Coin flip?\nSlots is $10 per try\nType \"quit\" to quit");
         Scanner s = new Scanner(System.in);
@@ -115,14 +115,14 @@ public class Game
         {
             for(int i = 0; i < heads; i+= 1)
             {
-                balance += bets;
+                balance += (int) bets;
             }
         }
         else
         {
             for(int i = 0; i < tails; i+= 1)
             {
-                balance += bets;
+                balance += (int) bets;
             }
         }
     }
@@ -130,14 +130,14 @@ public class Game
     {
         if (victory == 1)
         {
-            this.balance -= bets;
+            this.balance -= (int) bets;
         }
     }
     public void earnDiceMoney()
     {
         if (victory == 0)
         {
-            this.balance += bets;
+            this.balance += (int) bets;
         }
     }
 }
