@@ -15,12 +15,13 @@ public class Game
         Player p = new Player();
         Wallet w = new Wallet();
         p.welcome();
-        System.out.println("\nDice game, Slots, or Coin flip?\nSlots is $10 per try\nType \"quit\" to quit");
+        System.out.println("\nWould you like to play Dice game, Slots, Coin flip, or steal from someone?\nSlots is $10 per try\nType \"quit\" to quit");
         Scanner s = new Scanner(System.in);
         String response = s.nextLine();
+        response = response.toLowerCase();
         while (true)
         {
-            if (response.equalsIgnoreCase("Coin flip"))
+            if (response.contains("coin flip"))
             {
                 w.rebet();
                 balance = w.getBalance();
@@ -37,7 +38,7 @@ public class Game
                 System.out.println("\nYour balance is now $" + w.getBalance());
                 ads.adsPrint();
             }
-            else if (response.equalsIgnoreCase("Dice game"))
+            else if (response.contains("dice game"))
             {
                 w.rebet();
                 balance = w.getBalance();
@@ -50,7 +51,7 @@ public class Game
                 System.out.println("\nYour balance is now $" + w.getBalance());
                 ads.adsPrint();
             }
-            else if (response.equalsIgnoreCase("Slots"))
+            else if (response.contains("slots"))
             {
                 slot.slotIntro();
                 bets = 10;
@@ -69,7 +70,7 @@ public class Game
                 System.out.println("The Jackpot is now $" + slot.getJackpot() + "\nKeep trying!");
                 ads.adsPrint();
             }
-            else if (response.equalsIgnoreCase("steal"))
+            else if (response.contains("steal"))
             {
                 Steal steel = new Steal(w.getBalance());
                 this.balance = steel.getBalance();
@@ -88,7 +89,7 @@ public class Game
                 System.out.println("\nYou're in debt! What a loser! Get out!");
                 break;
             }
-            System.out.println("\nDice game, Slots, or Coin flip?\nSlots is $10 per try\nType \"quit\" to quit");
+            System.out.println("\nDice game, Slots, Coin flip, or steal from someone?\nSlots is $10 per try\nType \"quit\" to quit");
             response  = s.nextLine();
         }
     }

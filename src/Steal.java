@@ -44,9 +44,9 @@ public class Steal
     public void intro()
     {
         System.out.println("You are trying to rob: " + targetType);
-        System.out.println("Would you like to proceed?");
+        System.out.println("Would you like to proceed? (yes or no)");
         String answer = s.nextLine(); // Trust me this is absolutely necessary because if this line isn't included it won't take your response
-        answer = s.nextLine();
+        answer = s.nextLine(); //if i remove this line then the intro prints twice. I think we've been possessed by yandere dev
         while (true)
         {
             if (answer.contains("ye"))
@@ -59,7 +59,7 @@ public class Steal
                 System.out.print("You backed out, coward.");
                 break;
             }
-            System.out.println("Would you like to proceed?\n");
+            System.out.println("Would you like to proceed? (yes or no)\n");
             answer = s.nextLine();
         }
     }
@@ -157,6 +157,7 @@ public class Steal
             }
             case 4:
             {
+                // there's no way we are keeping this in. We have to change this to something else
                 personEvent("is getting that thong out they bussy, play'a.","is currently working.","is currently out partying with friends.");
                 break;
             }
