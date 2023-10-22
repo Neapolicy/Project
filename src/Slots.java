@@ -32,6 +32,10 @@ public class Slots
             {
                 tally ++;
             }
+            else
+            {
+                tally = 0;
+            }
         }
         if (tally == slotValues.length)
         {
