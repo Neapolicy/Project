@@ -69,10 +69,10 @@ public class Steal
         dictionary.put(2,"Drunk Alcoholic");
         dictionary.put(3,"A Kid");
         dictionary.put(4,"Single Mother of Three");
-        dictionary.put(5,"High Salary Worker");
-        dictionary.put(6,"Elon Musk");
+        dictionary.put(5,"Minimum Wage Worker");
+        dictionary.put(6,"High Salary Worker");
         dictionary.put(7,"Your Landlord");
-        dictionary.put(8,"Minimum Wage Worker");
+        dictionary.put(8,"Elon Musk");
         dictionary.put(9,"Casino Owner");
         dictionary.put(10,"The President");
 
