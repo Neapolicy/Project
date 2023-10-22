@@ -18,7 +18,7 @@ public class Slots
         slotValues = new int[]{};
         for(int i = 0; i < 3; i+= 1)
         {
-            int random_int = rand.nextInt(6) + 1;
+            int random_int = rand.nextInt(10);
             slotValues = Arrays.copyOf(slotValues, slotValues.length + 1);
             slotValues[slotValues.length - 1] = random_int;
         }
