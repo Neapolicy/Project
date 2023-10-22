@@ -34,7 +34,7 @@ public class Slots
             }
             else
             {
-                tally = 0;
+                tally = 0; // resets the counter everytime you reroll, so you don't win when you're not supposed to
             }
         }
         if (tally == slotValues.length)
