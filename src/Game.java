@@ -12,7 +12,7 @@ public class Game
         Advertisements ads = new Advertisements();
         Slots slot = new Slots();
         Wallet w = new Wallet();
-        System.out.println("Your current balance is " + w.getBalance());
+        System.out.println("Your current balance is $" + w.getBalance());
         Player p = new Player();
         p.welcome();
         System.out.println("\nWould you like to play Dice game, Slots, Coin flip, or steal from someone?\nSlots is $10 per try\nType \"quit\" to quit");
