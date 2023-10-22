@@ -3,7 +3,7 @@ import java.util.Arrays;
 public class Slots
 {
     Random rand = new Random();
-    int jackpot = 1000000;
+    int jackpot = 100000;
     int[] slotValues = {};
     private int tally;
     public void slotIntro()
