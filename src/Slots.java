@@ -4,7 +4,7 @@ public class Slots
 {
     Random rand = new Random();
     int jackpot = 100000;
-    int[] slotValues = {7, 7, 7};
+    int[] slotValues = {};
     private int tally;
     public void slotIntro()
     {
