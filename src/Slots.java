@@ -4,7 +4,7 @@ public class Slots
 {
     Random rand = new Random();
     int jackpot = 100000;
-    int[] slotValues = {};
+    int[] slotValues = {7, 7, 7};
     private int tally;
     public void slotIntro()
     {
@@ -34,11 +34,12 @@ public class Slots
             }
             else
             {
-                tally = 0; // resets the counter everytime you reroll, so you don't win when you're not supposed to
+                tally = 0; // resets the counter everytime you roll, so you don't win when you're not supposed to
             }
         }
         if (tally == slotValues.length)
         {
+            tally = 0;
             return 0;
         }
         return 1;
