@@ -13,7 +13,6 @@ public class Game
         Slots slot = new Slots();
         Wallet w = new Wallet();
         System.out.println("Your current balance is $" + w.getBalance());
-        Player p = new Player();
         p.welcome();
         System.out.println("\nWould you like to play Dice game, Slots, Coin flip, or steal from someone?\nSlots is $10 per try\nType \"quit\" to quit");
         Scanner s = new Scanner(System.in);
@@ -21,7 +20,7 @@ public class Game
         response = response.toLowerCase();
         while (true)
         {
-            if (response.contains("coin flip"))
+            if (response.contains("coin"))
             {
                 w.rebet();
                 balance = w.getBalance();
@@ -38,7 +37,7 @@ public class Game
                 System.out.println("\nYour balance is now $" + w.getBalance());
                 ads.adsPrint();
             }
-            else if (response.contains("dice game"))
+            else if (response.contains("dice"))
             {
                 w.rebet();
                 balance = w.getBalance();
@@ -51,7 +50,7 @@ public class Game
                 System.out.println("\nYour balance is now $" + w.getBalance());
                 ads.adsPrint();
             }
-            else if (response.contains("slots"))
+            else if (response.contains("slot"))
             {
                 slot.slotIntro();
                 bets = 10;
