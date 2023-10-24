@@ -48,7 +48,7 @@ public class Slots
     {
         if (value == 1)
         {
-            jackpot += 1000;
+            jackpot += 50;
         }
         if (value == 0)
         {
