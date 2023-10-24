@@ -1,12 +1,12 @@
 public class Character
 {
-    private int accuracy;
     private int health;
     private int stamina;
-    private int damageReduction;
-    public Character(int health)
+
+    public Character(int health, int stamina)
     {
         this.health = health;
+        this.stamina = stamina;
     }
 
 }
