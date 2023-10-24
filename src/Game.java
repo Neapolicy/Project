@@ -141,4 +141,57 @@ public class Game
             this.balance += (int) bets;
         }
     }
+    public void slotsGame()
+    {
+
+        slot.slotIntro();
+        bets = 10;
+        victory = 1;
+        balance = w.getBalance();
+        loseDiceMoney();
+        bets = slot.getJackpot();
+        System.out.println("The current Jackpot is " + slot.getJackpot());
+        System.out.println("You pay $10 to spin the slot machine.");
+        slot.generateSlot();
+        victory = slot.slotWinOrLose();
+        slot.setJackpot(victory);
+        earnDiceMoney();
+        w.setBalance(balance);
+        System.out.println("\nYour balance is now $" + w.getBalance());
+        System.out.println("The Jackpot is now $" + slot.getJackpot() + "\nKeep trying!");
+        ads.adsPrint();
+        timesGambled++;
+    }
+    public void coinFlipGame()
+    {
+        w.rebet();
+        balance = w.getBalance();
+        bets = w.getBets();
+        p.playerPreference();
+        p.playerGuess();
+        p.timesFlip();
+        heads = p.getHeads();
+        tails = p.getTails();
+        guess = p.getResponse();
+        loseMoney();
+        earnMoney();
+        w.setBalance(balance);
+        System.out.println("\nYour balance is now $" + w.getBalance());
+        ads.adsPrint();
+        timesGambled++;
+    }
+    public void diceGame()
+    {
+        w.rebet();
+        balance = w.getBalance();
+        bets = w.getBets();
+        Dice d = new Dice();
+        victory = d.getVictory();
+        loseDiceMoney();
+        earnDiceMoney();
+        w.setBalance(balance);
+        System.out.println("\nYour balance is now $" + w.getBalance());
+        ads.adsPrint();
+        timesGambled++;
+    }
 }
