@@ -48,7 +48,7 @@ public class Game
             }
             else if (response.contains("job") && (timesGambled >= 10))
             {
-                Wetworks cs = new Wetworks();
+                System.out.println("a");
             }
             if (response.equals("quit"))
             {
