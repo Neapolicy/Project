@@ -8,7 +8,7 @@ public class Slots
     private int tally;
     public void slotIntro()
     {
-        System.out.println("So you picked slots, huh? \nThere will be NO refunds.");
+        System.out.println("\nSo you picked slots, huh? \nThere will be NO refunds.");
         System.out.println("The winning numbers are : 777");
     }
 
