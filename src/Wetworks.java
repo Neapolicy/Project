@@ -1,9 +1,10 @@
-public class Wetworks extends Character
+public class Wetworks
 {
-    public Wetworks(int health, int stamina)
+    public Wetworks()
     {
-        super(health, stamina);
-        System.out.println("Sticking out your gyat for the rizzler. You're so skibidi. You're so fanum tax. I just wanna be your sigma.");
+        Daler d = new Daler(100, 100);
+        Enemy one = new Enemy(100, 100);
+        d.Stats();
     }
 }
 
