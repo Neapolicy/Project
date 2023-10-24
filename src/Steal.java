@@ -157,8 +157,7 @@ public class Steal
             }
             case 4:
             {
-                // there's no way we are keeping this in. We have to change this to something else
-                personEvent("is getting that thong out they bussy, play'a.","is currently working.","is currently out partying with friends.");
+                personEvent("is on the toilet.","is currently working.","is currently out partying with friends.");
                 break;
             }
             case 5:
