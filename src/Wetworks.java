@@ -4,8 +4,8 @@ public class Wetworks
 {
     private int balance;
     Random rand = new Random();
-    Daler d = new Daler(100, 100);
-    Enemy e = new Enemy(100, 100);
+    Daler d = new Daler(100, 30);
+    Enemy e = new Enemy(100, 40);
     public Wetworks()
     {
         game();

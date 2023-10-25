@@ -38,10 +38,14 @@ public class Daler extends Character {
                 }
                 break;
             case 2:
-                if (staminaCheck()) {
-                    if (dmgBoost) {
+                if (staminaCheck())
+                {
+                    if (dmgBoost)
+                    {
                         System.out.println("You've already enhanced your next attack!");
-                    } else {
+                        damage = 0;
+                    } else
+                    {
                         moveTwo();
                         stamina -= loseStamina(4);
                         damage = 0;
@@ -53,19 +57,28 @@ public class Daler extends Character {
                 damage = 0;
                 break;
             case 4:
-                if (staminaCheck()) {
-                    if (dmgReduce) {
+                if (staminaCheck())
+                {
+                    if (dmgReduce)
+                    {
                         System.out.println("You've already raised your guard!");
-                    } else {
+                        damage = 0;
+                    }
+                    else
+                    {
+                        damage = 0;
                         moveFour();
                     }
                 }
                 break;
             case 5:
-                if (moves >= 5) {
+                if (moves >= 5)
+                {
                     missTravailer();
                     moves = 0;
-                } else {
+                }
+                else
+                {
                     System.out.println("Your hands tremble, you aren't ready yet.");
                 }
                 break;
@@ -84,7 +97,8 @@ public class Daler extends Character {
     }
 
     public boolean staminaCheck() {
-        if (stamina > 0) {
+        if (stamina > 0)
+        {
             return true;
         }
         else
