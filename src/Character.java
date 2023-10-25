@@ -13,6 +13,7 @@ public class Character
     public int moveOne(String s, int damage)
     {
         System.out.println(s);
+        this.damage = damage;
         return damage;
     }
     public int moveThree(String s, int recover)

@@ -21,7 +21,11 @@ public class Wetworks
                 getResults();
                 break;
             }
+            e.health();
             d.choice();
+            e.takeDamage(d.getDamage());
+            e.enemyChoice();
+            d.takeDamage(e.getDamage());
         }
         getResults();
     }
