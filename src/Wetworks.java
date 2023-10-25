@@ -22,7 +22,6 @@ public class Wetworks
                 break;
             }
             d.Stats();
-            e.health();
             d.choice();
             e.enemyChoice();
             if (d.getdmgBoost())
@@ -42,6 +41,7 @@ public class Wetworks
             {
                 d.takeDamage(e.getDamage());
             }
+            e.health();
         }
         getResults();
     }
