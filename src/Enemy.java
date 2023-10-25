@@ -42,7 +42,7 @@ public class Enemy extends Character
                 damage = 0;
                 break;
             case 3:
-                stamina += moveThree("Your opponent downs a jack daniels", rand.nextInt(10,16));
+                stamina += moveThree("Your opponent downs a jack daniels", rand.nextInt(15, 21));
                 damage = 0;
                 break;
         }
