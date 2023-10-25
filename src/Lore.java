@@ -1,5 +1,7 @@
 public class Lore
 {
+    private boolean stealUnlock;
+    private boolean murderUnlock;
     public void loreReveal(int timesGambled)
     {
         switch (timesGambled)
@@ -15,10 +17,18 @@ public class Lore
                 break;
             case 6:
                 System.out.println("\nYour head starts ringing with pain. An important part of your past seems to re-emerge in your memories. \nYou remember being a professional thief, robbing even the most secure banks.\nYou finally remember your full name. You are Daler Muradov.\nStealing has been unlocked! You can now steal from other people.");
+                stealUnlock = true;
                 break;
             case 8:
                 System.out.println("\nYou finally remember everything after gambling for a while. \nYou are a professional hitman and used to kill people for a living.\nKilling is unlocked! You can now kill other people (don't worry, they don't die).");
+                murderUnlock = true;
                 break;
         }
+    }
+    public boolean isMurderUnlock() {
+        return murderUnlock;
+    }
+    public boolean isStealUnlock() {
+        return stealUnlock;
     }
 }

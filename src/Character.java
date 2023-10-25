@@ -27,10 +27,13 @@ public class Character
         return stamina;
     }
 
-    public int takeDamage(int dam)
+    public void takeDamage(int dam)
     {
         health -= dam;
-        return health;
+    }
+    public boolean staminaCheck()
+    {
+        return stamina > 0;
     }
     public int getHealth()
     {

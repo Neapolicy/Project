@@ -23,16 +23,17 @@ public class Daler extends Character {
         choice();
     }
 
-    public void choice() {
-        Stats();
-        System.out.println("Pick your move");
-        System.out.println("British Handshake (1) \nAt The Ready (2)\nRedbull (3) \nBlock (4) \nMiss Travailer (5)");
+    public void choice()
+    {
+        System.out.println("\nPick your move");
+        System.out.println("(1) British Handshake\n(2) At The Ready\n(3) Redbull\n(4) Block\n(5) ULTIMATE(Miss Travailer)");
         int answer = s.nextInt();
         switch (answer) {
             case 1:
-                if (staminaCheck()) {
-                    moveOne("You give your enemy a firm handshake", rand.nextInt(15, 25));
-                    loseStamina(10);
+                if (staminaCheck())
+                {
+                    damage = moveOne("You give your enemy a firm handshake", rand.nextInt(15, 25));
+                    stamina = loseStamina(7);
                     moves++;
                 }
                 break;
@@ -42,12 +43,14 @@ public class Daler extends Character {
                         System.out.println("You've already enhanced your next attack!");
                     } else {
                         moveTwo();
-                        stamina -= loseStamina(5);
+                        stamina -= loseStamina(4);
+                        damage = 0;
                     }
                 }
                 break;
             case 3:
                 stamina += moveThree("You crack open a nice cold can of redbull", rand.nextInt(10, 16));
+                damage = 0;
                 break;
             case 4:
                 if (staminaCheck()) {
@@ -55,7 +58,6 @@ public class Daler extends Character {
                         System.out.println("You've already raised your guard!");
                     } else {
                         moveFour();
-                        stamina -= loseStamina(5);
                     }
                 }
                 break;
@@ -84,8 +86,12 @@ public class Daler extends Character {
     public boolean staminaCheck() {
         if (stamina > 0) {
             return true;
-        } else {
-            System.out.print("You're exhausted");
+        }
+        else
+        {
+            stamina = 0;
+            damage = 0;
+            System.out.println("You're exhausted ");
             return false;
         }
     }

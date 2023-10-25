@@ -6,16 +6,14 @@ public class Enemy extends Character
     public Enemy(int health, int stamina)
     {
         super(health, stamina);
-        this.health = health;
         this.stamina = stamina;
     }
     public void health()
     {
-        System.out.print("The enemy has " + getHealth() + "health");
-    }
-    public int getHeatlh()
-    {
-        return health;
+        if (getHealth() > 0)
+        {
+            System.out.println("The enemy has " + getHealth() + " health");
+        }
     }
     public void enemyChoice()
     {

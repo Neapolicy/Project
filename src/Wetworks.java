@@ -8,20 +8,21 @@ public class Wetworks
     Enemy e = new Enemy(100, 100);
     public Wetworks()
     {
-        d.Stats();
         game();
     }
     public void game()
     {
         while (d.getHealth() > 0)
         {
+            d.Stats();
+            e.health();
             if (e.getHealth() <=0)
             {
+                System.out.println("You successfully took down your target!");
                 getBalance();
                 getResults();
                 break;
             }
-            e.health();
             d.choice();
             if (d.getdmgBoost())
             {
@@ -33,12 +34,9 @@ public class Wetworks
             e.enemyChoice();
             if (d.getdmgReduce())
             {
-                d.takeDamage((int) Math.round(e.getDamage() * .7));
-            }
-            else
-            {
                 d.takeDamage(e.getDamage());
             }
+            d.takeDamage(e.getDamage());
         }
         getResults();
     }

@@ -71,7 +71,18 @@ public class Game
                 System.out.println("\nYou're in debt! What a loser! Get out!");
                 break;
             }
-            System.out.println("\nDice game, Slots, Coin flip\nSlots is $10 per try\nType \"quit\" to quit");
+            if (l.isMurderUnlock())
+            {
+                System.out.println("\nDice game, Slots, Coin flip, Steal, or Murder?\nSlots is $10 per try\nType \"quit\" to quit");
+            }
+            else if (l.isStealUnlock())
+            {
+            System.out.println("\nDice game, Slots, Coin flip, or Steal?\nSlots is $10 per try\nType \"quit\" to quit");
+            }
+            else
+            {
+                System.out.println("\nDice game, Slots or Coin flip?\nSlots is $10 per try\nType \"quit\" to quit");
+            }
             response  = s.nextLine();
         }
     }
