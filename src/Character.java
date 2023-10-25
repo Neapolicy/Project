@@ -16,6 +16,10 @@ public class Character
         this.damage = damage;
         return damage;
     }
+    public void moveTwo(String s)
+    {
+        System.out.println(s);
+    }
     public int moveThree(String s, int recover)
     {
         System.out.println(s);
