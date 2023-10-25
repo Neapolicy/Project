@@ -46,7 +46,7 @@ public class Game
                 System.out.println("\nYour balance is now $" + w.getBalance());
                 ads.adsPrint();
             }
-            else if (response.contains("job") && (timesGambled >= 10))
+            else if (response.contains("job"))
             {
                 Wetworks w= new Wetworks();
             }
