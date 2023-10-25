@@ -1,4 +1,3 @@
-import java.util.Scanner;
 import java.util.Random;
 public class Wetworks
 {
@@ -21,9 +20,7 @@ public class Wetworks
                 getResults();
                 break;
             }
-            d.Stats();
             d.choice();
-            e.enemyChoice();
             if (d.getdmgBoost())
             {
                 e.takeDamage((int) Math.round((d.getDamage() * 2.5)));
@@ -32,6 +29,7 @@ public class Wetworks
             else {
                 e.takeDamage(d.getDamage());
             }
+            e.enemyChoice();
             if (d.getdmgReduce())
             {
                 d.takeDamage((int) Math.round(e.getDamage() * .7));
@@ -41,7 +39,7 @@ public class Wetworks
             {
                 d.takeDamage(e.getDamage());
             }
-            e.health();
+            getInfo();
         }
         getResults();
     }
@@ -57,5 +55,13 @@ public class Wetworks
     {
         balance += rand.nextInt(100, 200);
         return balance;
+    }
+
+    public void getInfo()
+    {
+        System.out.println("Daler's stats: ");
+        d.health();
+        System.out.println("Enemy's stats: ");
+        e.health();
     }
 }

@@ -35,13 +35,25 @@ public class Character
     {
         health -= dam;
     }
-    public boolean staminaCheck()
-    {
-        return stamina > 0;
-    }
-    public int getHealth()
+    public boolean staminaCheck(int staminaCost) {
+        if (stamina - staminaCost > 0) {
+            return true;
+        } else {
+            damage = 0;
+            System.out.println("You're exhausted ");
+            return false;
+        }
+    }    public int getHealth()
     {
         return health;
+    }
+    public void health()
+    {
+        if (getHealth() > 0)
+        {
+            System.out.println(getHealth() + " health");
+            System.out.println(getStamina() + " stamina");
+        }
     }
     public int getStamina()
     {

@@ -2,7 +2,6 @@ import java.util.Scanner;
 import java.util.Random;
 
 public class Daler extends Character {
-    private int health;
     private int stamina;
     private int damage;
     Random rand = new Random();
@@ -13,14 +12,7 @@ public class Daler extends Character {
 
     public Daler(int health, int stamina) {
         super(health, stamina);
-        this.health = health;
         this.stamina = stamina;
-    }
-
-    public void Stats() {
-        System.out.println("Your hp is " + getHealth());
-        System.out.println("Your stamina is " + stamina);
-        choice();
     }
 
     public void choice() {

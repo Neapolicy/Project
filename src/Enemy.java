@@ -13,18 +13,11 @@ public class Enemy extends Character
         super(health, stamina);
         this.stamina = stamina;
     }
-    public void health()
-    {
-        if (getHealth() > 0)
-        {
-            System.out.println("The enemy has " + getHealth() + " health");
-        }
-    }
     public void enemyChoice()
     {
-        if (staminaCheck())
+        if (staminaCheck(7))
         {
-            choice = rand.nextInt(1, 7);
+            choice = rand.nextInt(1, 11);
         }
         else
         {
@@ -32,7 +25,7 @@ public class Enemy extends Character
         }
         switch (choice)
         {
-            case 1, 4, 5, 6:
+            default:
                 attackDesc();
                 damage = moveOne(desc, rand.nextInt(15, 21));
                 stamina -= loseStamina(7);
