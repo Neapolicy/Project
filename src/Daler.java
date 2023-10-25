@@ -17,9 +17,10 @@ public class Daler extends Character {
         this.stamina = stamina;
     }
 
-    public void Stats() {
+    public void Stats()
+    {
         System.out.println("Your hp is " + getHealth());
-        System.out.println("Your stamina is " + getStamina());
+        System.out.println("Your stamina is " + stamina);
         choice();
     }
 
@@ -115,13 +116,7 @@ public class Daler extends Character {
         dmgReduce = true;
     }
 
-    public int getHealth() {
-        return health;
-    }
-    public int getDamage()
-    {
-        return damage;
-    }
+    public int getDamage() { return damage; }
     public boolean getdmgReduce()
     {
         return dmgReduce;
@@ -130,4 +125,5 @@ public class Daler extends Character {
     {
         return dmgBoost;
     }
+    //what
 }
