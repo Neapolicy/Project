@@ -24,7 +24,7 @@ public class Enemy extends Character
     {
         if (staminaCheck())
         {
-            choice = rand.nextInt(1, 4);
+            choice = rand.nextInt(1, 7);
         }
         else
         {
@@ -32,10 +32,10 @@ public class Enemy extends Character
         }
         switch (choice)
         {
-            case 1:
+            case 1, 4, 5, 6:
                 attackDesc();
                 damage = moveOne(desc, rand.nextInt(15, 21));
-                stamina -= loseStamina(rand.nextInt(7,11));
+                stamina -= loseStamina(7);
                 break;
             case 2:
                 moveTwo("he shoots you with a nerf dart but it doesn't do anything");

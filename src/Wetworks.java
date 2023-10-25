@@ -14,8 +14,6 @@ public class Wetworks
     {
         while (d.getHealth() > 0)
         {
-            d.Stats();
-            e.health();
             if (e.getHealth() <=0)
             {
                 System.out.println("You successfully took down your target!");
@@ -23,20 +21,27 @@ public class Wetworks
                 getResults();
                 break;
             }
+            d.Stats();
+            e.health();
             d.choice();
+            e.enemyChoice();
             if (d.getdmgBoost())
             {
                 e.takeDamage((int) Math.round((d.getDamage() * 2.5)));
+                d.resetBoost();
             }
             else {
                 e.takeDamage(d.getDamage());
             }
-            e.enemyChoice();
             if (d.getdmgReduce())
+            {
+                d.takeDamage((int) Math.round(e.getDamage() * .7));
+                d.resetReduce();
+            }
+            else
             {
                 d.takeDamage(e.getDamage());
             }
-            d.takeDamage(e.getDamage());
         }
         getResults();
     }
