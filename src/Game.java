@@ -48,7 +48,17 @@ public class Game
             }
             else if (response.contains("job"))
             {
-                Wetworks w= new Wetworks();
+                Wetworks wet = new Wetworks();
+                if (wet.getResults())
+                {
+                    this.balance += wet.getBalance();
+                    w.setBalance(balance);
+                    System.out.println("\nYour balance is now $" + w.getBalance());
+                }
+                else {
+                    System.out.println("Unfortunately, you have been game ended on the job, your funeral bill costs more than you can afford");
+                    this.balance -= 0;
+                }
             }
             if (response.equals("quit"))
             {
