@@ -72,7 +72,7 @@ public class Daler extends Character {
 
     public int missTravailer() // this is your ult
     {
-        damage = moveOne("You express your right to the second amendment and pull out your weapon, Miss Travailler", 500);
+        damage = moveOne("You express your right to the second amendment", 500);
         return damage;
     }
 
@@ -101,5 +101,13 @@ public class Daler extends Character {
     public int getDamage()
     {
         return damage;
+    }
+    public boolean getdmgReduce()
+    {
+        return dmgReduce;
+    }
+    public boolean getdmgBoost()
+    {
+        return dmgBoost;
     }
 }

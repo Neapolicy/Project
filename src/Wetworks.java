@@ -23,9 +23,22 @@ public class Wetworks
             }
             e.health();
             d.choice();
-            e.takeDamage(d.getDamage());
+            if (d.getdmgBoost())
+            {
+                e.takeDamage((int) Math.round((d.getDamage() * 2.5)));
+            }
+            else {
+                e.takeDamage(d.getDamage());
+            }
             e.enemyChoice();
-            d.takeDamage(e.getDamage());
+            if (d.getdmgReduce())
+            {
+                d.takeDamage((int) Math.round(e.getDamage() * .7));
+            }
+            else
+            {
+                d.takeDamage(e.getDamage());
+            }
         }
         getResults();
     }
