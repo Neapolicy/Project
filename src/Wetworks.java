@@ -5,18 +5,18 @@ public class Wetworks {
     Random rand = new Random();
     Daler d = new Daler(100, 30);
     Enemy e = new Enemy(100, 40);
+    Enemy2 ex = new Enemy2(200, 100);
 
     public Wetworks() {
         game();
     }
-
     public void game() {
         while (d.getHealth() > 0) {
             getInfo();
 
             int dalerChoice = d.choice();
             e.enemyChoice();
-            System.out.println(dalerChoice);
+
             if (d.getdmgBoost() && (dalerChoice == 1) && (d.stamina > 7)) {
                 e.takeDamage((d.getDamage() * 2));
                 d.resetBoost();

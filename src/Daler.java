@@ -5,7 +5,6 @@ public class Daler extends Character {
     private int damage;
     Random rand = new Random();
     private int answer;
-    private boolean dmgBoost = false;
     private boolean dmgReduce = false;
     private final Scanner s = new Scanner(System.in);
     private boolean exhaustedPrinted = false; // Added boolean variable
