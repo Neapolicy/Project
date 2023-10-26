@@ -18,16 +18,6 @@ public class Character
     {
         System.out.println(s);
     }
-    public int moveThree(String s, int recover)
-    {
-        System.out.println(s);
-        return stamina + recover;
-    }
-    public int loseStamina(int energy)
-    {
-        stamina -= energy;
-        return stamina;
-    }
 
     public void takeDamage(int dam)
     {
@@ -48,8 +38,5 @@ public class Character
     {
         return health;
     }
-
-    public void setHealth(int i) {
-        this.health = i;
-    }
+    public int getStamina() { return stamina; }
 }

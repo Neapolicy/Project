@@ -11,7 +11,7 @@ public class Enemy extends Character {
     }
 
     public void enemyChoice() {
-        if (staminaCheck(7)) {
+        if (stamina >= 7) {
             choice = rand.nextInt(1, 11);
         } else {
             choice = 3;
@@ -24,16 +24,17 @@ public class Enemy extends Character {
             case 3:
                 if (staminaLimit(20, 40)) {
                     stamina = 40;
-                    System.out.println("Your opponent downs a jack daniels");
+                    System.out.println("Your opponent is hungover");
                 } else {
-                    stamina += moveThree("Your opponent downs a jack daniels", 20);
+                    System.out.println("Your opponent downs a jack daniels");
+                    stamina += 20;
                 }
                 damage = 0;
                 break;
             default:
                 desc = attackDesc();
                 damage = moveOne(desc, rand.nextInt(15, 21));
-                stamina = loseStamina(7);
+                stamina -= 7;
                 break;
         }
     }

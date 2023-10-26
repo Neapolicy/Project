@@ -12,6 +12,26 @@ public class Wetworks {
 
     public void game() {
         while (d.getHealth() > 0) {
+            getInfo();
+
+            int dalerChoice = d.choice(); // Store the player's choice
+            e.enemyChoice();
+
+            if (d.getdmgBoost() && (dalerChoice == 1) && (d.stamina > 7)) {
+                e.takeDamage((d.getDamage() * 2));
+                d.resetBoost();
+            }
+            else if (dalerChoice == 1 && d.staminaCheck(7)) {
+                e.takeDamage(d.getDamage());
+                d.stamina -= 7; // Deduct stamina after the action is performed
+            }
+
+            if (d.getdmgReduce()) {
+                d.takeDamage((int) (e.getDamage() * 0.5));
+                d.resetReduce();
+            } else {
+                d.takeDamage(e.getDamage());
+            }
             if (e.health <= 0) {
                 e.health = 0; // sets enemy health to zero
                 System.out.println("You successfully took down your target!");
@@ -24,27 +44,6 @@ public class Wetworks {
                 getBalance();
                 getResults();
                 break;
-            }
-            getInfo();
-
-            int dalerChoice = d.choice(); // Store the player's choice
-            e.enemyChoice();
-
-            if (d.getdmgBoost() && (dalerChoice == 1) && d.staminaCheck(7)) {
-                e.takeDamage((d.getDamage() * 2));
-                d.resetBoost();
-            }
-            else if (dalerChoice == 1 && d.staminaCheck(7)) {
-                System.out.println(d.getDamage());
-                System.out.println(e.health);
-                e.takeDamage(d.getDamage());
-            }
-
-            if (d.getdmgReduce()) {
-                d.takeDamage((int) (e.getDamage() * 0.5));
-                d.resetReduce();
-            } else {
-                d.takeDamage(e.getDamage());
             }
              // Display stats at the end of the turn
         }
@@ -61,6 +60,6 @@ public class Wetworks {
 
     public void getInfo() {
         System.out.println("Daler's stats: " + d.health + " health, " + d.stamina + " stamina");
-        System.out.println("Enemy's stats: " + e.health + " health, " + e.stamina + " stamina");
+        System.out.println("Enemy's stats: " + e.getHealth() + " health, " + e.getStamina() + " stamina");
     }
 }

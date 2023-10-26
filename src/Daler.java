@@ -21,9 +21,8 @@ public class Daler extends Character {
 
         switch (answer) {
             case 1:
-                if (staminaCheck(7)) {
+                if (stamina >= 7) {
                     damage = moveOne("You give your enemy a firm handshake", rand.nextInt(15, 25));
-                    stamina = loseStamina(7);
                     moves++;
                 }
                 else {
@@ -31,12 +30,12 @@ public class Daler extends Character {
                 }
                 break;
             case 2:
-                if (staminaCheck(4)) {
+                if (stamina >= 4) {
                     if (dmgBoost) {
                         System.out.println("You've already enhanced your next attack!");
                     } else {
                         moveTwo();
-                        stamina = loseStamina(4);
+                        stamina -= 4;
                         moves ++;
                     }
                 }
@@ -45,11 +44,12 @@ public class Daler extends Character {
                 }
                 break;
             case 3:
-                if (staminaLimit(7, 30)) {
+                if (stamina >= 30) {
                     stamina = 30;
-                    System.out.println("You crack open a nice cold can of Redbull");
+                    System.out.println("You're wide awake, y'know");
                 } else {
-                    stamina += moveThree("You crack open a nice cold can of Redbull", 7);
+                    stamina += 7;
+                    System.out.println("You crack open a nice cold can of Redbull");
                 }
                 break;
             case 4:
