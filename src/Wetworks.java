@@ -12,18 +12,21 @@ public class Wetworks {
 
     public void game() {
         while (d.getHealth() > 0) {
-            if (e.getHealth() <= 0) {
-                e.setHealth(0); // sets enemy health to zero
+            if (e.health <= 0) {
+                e.health = 0; // sets enemy health to zero
                 System.out.println("You successfully took down your target!");
                 getBalance();
                 getResults();
                 break;
             }
-            if (d.getHealth() <= 0) {
-                d.setHealth(0); // Set player's health to zero
+            if (d.health <= 0) {
+                d.health = 0; // Set player's health to zero
                 getBalance();
                 getResults();
                 break;
+            }
+            else {
+                getInfo();
             }
 
             int dalerChoice = d.choice(); // Store the player's choice
@@ -43,7 +46,7 @@ public class Wetworks {
             } else {
                 d.takeDamage(e.getDamage());
             }
-            getInfo(); // Display stats at the end of the turn
+             // Display stats at the end of the turn
         }
     }
 

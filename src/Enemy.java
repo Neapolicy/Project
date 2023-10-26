@@ -18,7 +18,7 @@ public class Enemy extends Character {
         }
         switch (choice) {
             case 2:
-                desc = "he shoots you with a nerf dart but it doesn't do anything";
+                moveTwo("he shoots you with a nerf dart but it doesn't do anything");
                 damage = 0;
                 break;
             case 3:
@@ -27,7 +27,6 @@ public class Enemy extends Character {
                 } else {
                     stamina += moveThree("Your opponent downs a jack daniels", 20);
                 }
-                desc = "Your opponent downs a jack daniels";
                 damage = 0;
                 break;
             default:

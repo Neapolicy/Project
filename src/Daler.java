@@ -26,6 +26,9 @@ public class Daler extends Character {
                     stamina = loseStamina(7);
                     moves++;
                 }
+                else {
+                    System.out.println("Daler is exhausted!");
+                }
                 break;
             case 2:
                 if (staminaCheck(4)) {
@@ -35,6 +38,9 @@ public class Daler extends Character {
                         moveTwo();
                         stamina = loseStamina(4);
                     }
+                }
+                else {
+                    System.out.println("Daler is exhausted!");
                 }
                 break;
             case 3:
@@ -77,15 +83,6 @@ public class Daler extends Character {
     public void moveTwo() {
         System.out.println("You steady yourself for your next attack");
         dmgBoost = true;
-    }
-
-    public boolean staminaCheck(int staminaCost) {
-        if (stamina - staminaCost > 0) {
-            return true;
-        } else {
-            System.out.println("You're exhausted ");
-            return false;
-        }
     }
 
     public void moveFour() {
