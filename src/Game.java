@@ -56,7 +56,7 @@ public class Game
                 }
                 else {
                     System.out.println("Unfortunately, you have been game ended on the job, your funeral bill costs more than you can afford");
-                    this.balance = 0;
+                    break;
                 }
             }
             if (response.equals("quit"))
@@ -70,6 +70,7 @@ public class Game
                 System.out.println("\nYou're in debt! What a loser! Get out!");
                 break;
             }
+            System.out.println("\nWould you like to play Dice game, Slots, Coin flip\nSlots is $10 per try\nType \"quit\" to quit");
             response  = s.nextLine();
         }
     }

@@ -20,8 +20,9 @@ public class Wetworks {
             if (d.getdmgBoost() && (dalerChoice == 1) && (d.stamina > 7)) {
                 e.takeDamage((d.getDamage() * 2));
                 d.resetBoost();
+                d.stamina -= 7;
             }
-            else if (dalerChoice == 1 && d.staminaCheck(7)) {
+            else if (dalerChoice == 1 && d.stamina >= 7) {
                 e.takeDamage(d.getDamage());
                 d.stamina -= 7; // Deduct stamina after the action is performed
             }
