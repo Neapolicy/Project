@@ -24,19 +24,21 @@ public class Wetworks
             if (turns % 2 == 1)
             {
                 d.choice();
+                getInfo();
                 turns ++;
             }
             else
             {
                 e.enemyChoice();
+                getInfo();
                 turns ++;
             }
-            if (d.getdmgBoost() && (d.choice() == 1))
+            if (d.getdmgBoost() && (d.choice() == 1) && d.staminaCheck(7))
             {
                 e.takeDamage((d.getDamage() * 2));
                 d.resetBoost();
             }
-            else if (d.choice() == 1) {
+            else if (d.choice() == 1 && d.staminaCheck(7)) {
                 e.takeDamage(d.getDamage());
             }
             if (d.getdmgReduce())
@@ -48,7 +50,6 @@ public class Wetworks
             {
                 d.takeDamage(e.getDamage());
             }
-            getInfo();
         }
         getResults();
     }
