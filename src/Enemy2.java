@@ -3,6 +3,7 @@ import java.util.Random;
 public class Enemy2 extends Character {
     private int choice;
     private int damage;
+    private int pity;
     private String desc;
     private Random rand = new Random();
 
@@ -12,7 +13,15 @@ public class Enemy2 extends Character {
 
     public void enemyChoice() {
         if (stamina >= 70) {
-            choice = rand.nextInt(1, 11);
+            if (pity == 5)
+            {
+                choice = 2;
+                pity = 0;
+            }
+            else
+            {
+                choice = rand.nextInt(1, 11);
+            }
         } else {
             choice = 3;
         }
@@ -46,6 +55,7 @@ public class Enemy2 extends Character {
                 damage = 0;
                 break;
             default:
+                pity++;
                 moveTwo("Your opponents swings her axe around");
                 break;
         }

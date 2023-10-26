@@ -37,7 +37,7 @@ public class Game
                 slotsGame();
                 l.loreReveal(timesGambled);
             }
-            else if (response.contains("steal") && (timesGambled >= 7))
+            else if (response.contains("steal") && (timesGambled >= 6))
             {
                 Steal steel = new Steal(w.getBalance());
                 this.balance = steel.getBalance();
