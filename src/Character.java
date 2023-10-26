@@ -47,4 +47,9 @@ public class Character
     public int getHealth()
     {
         return health;
-    }}
+    }
+
+    public void setHealth(int i) {
+        this.health = i;
+    }
+}
