@@ -42,7 +42,7 @@ public class Character
     }
     public boolean staminaLimit(int recover, int cap)
     {
-        return stamina + recover > cap;
+        return stamina + recover >= cap;
     }
     public int getHealth()
     {
