@@ -2,7 +2,6 @@ import java.util.Scanner;
 import java.util.Random;
 
 public class Daler extends Character {
-    private int stamina;
     private int damage;
     Random rand = new Random();
     int moves;
@@ -12,7 +11,6 @@ public class Daler extends Character {
 
     public Daler(int health, int stamina) {
         super(health, stamina);
-        this.stamina = stamina;
     }
 
     public void choice() {
@@ -40,7 +38,14 @@ public class Daler extends Character {
                 }
                 break;
             case 3:
-                stamina += moveThree("You crack open a nice cold can of redbull", rand.nextInt(10, 16));
+                if (stamina + moveThree("You crack open a nice cold can of redbull", rand.nextInt(10, 16)) > 30)
+                {
+                    stamina = 30;
+                }
+                else
+                {
+                    stamina += moveThree("You crack open a nice cold can of redbull", rand.nextInt(10, 16));
+                }
                 damage = 0;
                 break;
             case 4:

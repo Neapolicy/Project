@@ -2,16 +2,13 @@ import java.util.Random;
 public class Enemy extends Character
 {
     private int choice;
-    private int stamina;
     private int damage;
     private String desc;
-    private
-    Random rand = new Random();
+    private Random rand = new Random();
 
     public Enemy(int health, int stamina)
     {
         super(health, stamina);
-        this.stamina = stamina;
     }
     public void enemyChoice()
     {
@@ -28,14 +25,21 @@ public class Enemy extends Character
             default:
                 attackDesc();
                 damage = moveOne(desc, rand.nextInt(15, 21));
-                stamina -= loseStamina(7);
+                stamina = loseStamina(7);
                 break;
             case 2:
                 moveTwo("he shoots you with a nerf dart but it doesn't do anything");
                 damage = 0;
                 break;
             case 3:
-                stamina += moveThree("Your opponent downs a jack daniels", rand.nextInt(15, 21));
+                if (staminaLimit(20, 40))
+                {
+                    stamina = 40;
+                }
+                else
+                {
+                    stamina += moveThree("Your opponent downs a jack daniels", 20);
+                }
                 damage = 0;
                 break;
         }

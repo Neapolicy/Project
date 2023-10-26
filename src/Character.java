@@ -1,9 +1,8 @@
 
 public class Character
 {
-    private int health;
-    private int stamina;
-    private int damage;
+    protected int health;
+    protected int stamina;
 
     public Character(int health, int stamina)
     {
@@ -13,7 +12,6 @@ public class Character
     public int moveOne(String s, int damage)
     {
         System.out.println(s);
-        this.damage = damage;
         return damage;
     }
     public void moveTwo(String s)
@@ -39,11 +37,14 @@ public class Character
         if (stamina - staminaCost > 0) {
             return true;
         } else {
-            damage = 0;
-            System.out.println("You're exhausted ");
             return false;
         }
-    }    public int getHealth()
+    }
+    public boolean staminaLimit(int recover, int cap)
+    {
+        return stamina + recover > cap;
+    }
+    public int getHealth()
     {
         return health;
     }
