@@ -3,6 +3,7 @@ public class Character
 {
     protected int health;
     protected int stamina;
+    protected int moves;
 
     public Character(int health, int stamina)
     {

@@ -26,6 +26,11 @@ public class Wetworks {
                 e.takeDamage(d.getDamage());
                 d.stamina -= 7; // Deduct stamina after the action is performed
             }
+            else if (dalerChoice == 5 && d.moves >= 5)
+            {
+                d.moves = 0;
+                e.takeDamage(500);
+            }
 
             if (d.getdmgReduce()) {
                 d.takeDamage((int) (e.getDamage() * 0.5));

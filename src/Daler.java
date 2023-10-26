@@ -4,7 +4,6 @@ import java.util.Random;
 public class Daler extends Character {
     private int damage;
     Random rand = new Random();
-    int moves;
     private boolean dmgBoost = false;
     private boolean dmgReduce = false;
     private final Scanner s = new Scanner(System.in);
@@ -61,20 +60,13 @@ public class Daler extends Character {
                 break;
             case 5:
                 if (moves >= 5) {
-                    missTravailer();
-                    moves = 0;
+                    damage = moveOne("You express your right to the second amendment by pulling out your gun, Miss Travailer", 500);
                 } else {
                     System.out.println("Your hands tremble, you aren't ready yet.");
                 }
                 break;
         }
         return answer;
-    }
-
-    public int missTravailer() // this is your ult
-    {
-        damage = moveOne("You express your right to the second amendment", 500);
-        return damage;
     }
 
     public void moveTwo() {
