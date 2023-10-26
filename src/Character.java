@@ -47,17 +47,4 @@ public class Character
     public int getHealth()
     {
         return health;
-    }
-    public void health()
-    {
-        if (getHealth() > 0)
-        {
-            System.out.println(getHealth() + " health");
-            System.out.println(getStamina() + " stamina");
-        }
-    }
-    public int getStamina()
-    {
-        return stamina;
-    }
-}
+    }}

@@ -31,18 +31,15 @@ public class Daler extends Character {
                         System.out.println("You've already enhanced your next attack!");
                     } else {
                         moveTwo();
-                        stamina = loseStamina(4);
+                        moves++;
                     }
                 }
                 break;
             case 3:
-                if (stamina + 7 >= 30)
-                {
+                if (stamina + 7 >= 30) {
                     System.out.println("What are you doing?! You're fully energized!");
                     stamina = 30;
-                }
-                else
-                {
+                } else {
                     stamina += moveThree("You crack open a nice cold can of redbull", 7);
                 }
                 break;
@@ -51,8 +48,8 @@ public class Daler extends Character {
                     System.out.println("You've already raised your guard!");
                 } else {
                     moveFour();
+                    moves++;
                 }
-
                 break;
             case 5:
                 if (moves >= 5) {
