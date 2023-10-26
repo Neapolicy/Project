@@ -19,7 +19,7 @@ public class Wetworks {
                 getResults();
                 break;
             }
-            if (d.health <= 0) {
+            else if (d.health <= 0) {
                 d.health = 0; // Set player's health to zero
                 getBalance();
                 getResults();
