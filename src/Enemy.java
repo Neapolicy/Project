@@ -24,6 +24,7 @@ public class Enemy extends Character {
             case 3:
                 if (staminaLimit(20, 40)) {
                     stamina = 40;
+                    System.out.println("Your opponent downs a jack daniels");
                 } else {
                     stamina += moveThree("Your opponent downs a jack daniels", 20);
                 }
