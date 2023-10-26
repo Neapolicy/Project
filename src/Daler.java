@@ -4,6 +4,7 @@ import java.util.Random;
 public class Daler extends Character {
     private int damage;
     Random rand = new Random();
+    private int answer;
     private boolean dmgBoost = false;
     private boolean dmgReduce = false;
     private final Scanner s = new Scanner(System.in);
@@ -16,8 +17,7 @@ public class Daler extends Character {
     public int choice() {
         System.out.println("\nPick your move");
         System.out.println("(1) British Handshake\n(2) At The Ready\n(3) Redbull\n(4) Block\n(5) ULTIMATE(Miss Travailer)");
-        int answer = s.nextInt();
-
+        answer = s.nextInt();
         switch (answer) {
             case 1:
                 if (stamina >= 7) {
@@ -65,6 +65,8 @@ public class Daler extends Character {
                     System.out.println("Your hands tremble, you aren't ready yet.");
                 }
                 break;
+            default:
+                choice();
         }
         return answer;
     }
