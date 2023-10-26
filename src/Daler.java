@@ -8,6 +8,7 @@ public class Daler extends Character {
     private boolean dmgBoost = false;
     private boolean dmgReduce = false;
     private final Scanner s = new Scanner(System.in);
+    private boolean exhaustedPrinted = false; // Added boolean variable
 
     public Daler(int health, int stamina) {
         super(health, stamina);
@@ -17,6 +18,7 @@ public class Daler extends Character {
         System.out.println("\nPick your move");
         System.out.println("(1) British Handshake\n(2) At The Ready\n(3) Redbull\n(4) Block\n(5) ULTIMATE(Miss Travailer)");
         int answer = s.nextInt();
+
         switch (answer) {
             case 1:
                 if (staminaCheck(7)) {
@@ -31,16 +33,20 @@ public class Daler extends Character {
                         System.out.println("You've already enhanced your next attack!");
                     } else {
                         moveTwo();
-                        moves++;
+                        stamina = loseStamina(4);
                     }
                 }
                 break;
             case 3:
                 if (stamina + 7 >= 30) {
-                    System.out.println("What are you doing?! You're fully energized!");
+                    if (!exhaustedPrinted) { // Check if exhausted message was printed this turn
+                        System.out.println("What are you doing?! You're fully energized!");
+                        exhaustedPrinted = true; // Set the flag
+                    }
                     stamina = 30;
                 } else {
                     stamina += moveThree("You crack open a nice cold can of redbull", 7);
+                    exhaustedPrinted = false; // Reset the flag
                 }
                 break;
             case 4:
@@ -48,7 +54,6 @@ public class Daler extends Character {
                     System.out.println("You've already raised your guard!");
                 } else {
                     moveFour();
-                    moves++;
                 }
                 break;
             case 5:
