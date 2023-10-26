@@ -34,7 +34,7 @@ public class Character
         health -= dam;
     }
     public boolean staminaCheck(int staminaCost) {
-        if (stamina - staminaCost > 0) {
+        if (stamina - staminaCost >= 0) {
             return true;
         } else {
             return false;

@@ -32,7 +32,7 @@ public class Wetworks {
             int dalerChoice = d.choice(); // Store the player's choice
             e.enemyChoice();
 
-            if (d.getdmgBoost() && (dalerChoice == 1) && d.staminaCheck(7)) {
+            if (d.getdmgBoost() && (dalerChoice == 1)) {
                 e.takeDamage((d.getDamage() * 2));
                 d.resetBoost();
             }

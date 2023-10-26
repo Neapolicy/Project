@@ -34,9 +34,12 @@ public class Daler extends Character {
                 if (staminaCheck(4)) {
                     if (dmgBoost) {
                         System.out.println("You've already enhanced your next attack!");
+                        damage = 0;
                     } else {
+                        damage = 0;
                         moveTwo();
                         stamina = loseStamina(4);
+                        moves ++;
                     }
                 }
                 else {
@@ -44,6 +47,7 @@ public class Daler extends Character {
                 }
                 break;
             case 3:
+                damage = 0;
                 if (stamina + 7 >= 30) {
                     if (!exhaustedPrinted) { // Check if exhausted message was printed this turn
                         System.out.println("What are you doing?! You're fully energized!");
@@ -52,10 +56,12 @@ public class Daler extends Character {
                     stamina = 30;
                 } else {
                     stamina += moveThree("You crack open a nice cold can of redbull", 7);
+                    moves ++;
                     exhaustedPrinted = false; // Reset the flag
                 }
                 break;
             case 4:
+                damage = 0;
                 if (dmgReduce) {
                     System.out.println("You've already raised your guard!");
                 } else {

@@ -13,8 +13,7 @@ public class Game
     Advertisements ads = new Advertisements();
     Player p = new Player();
     Lore l = new Lore();
-    public Game()
-    {
+    public Game() throws InterruptedException {
         System.out.println("Your current balance is $" + w.getBalance());
         p.welcome();
         System.out.println("\nWould you like to play Dice game, Slots, Coin flip\nSlots is $10 per try\nType \"quit\" to quit");
