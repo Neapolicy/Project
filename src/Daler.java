@@ -13,7 +13,7 @@ public class Daler extends Character {
         super(health, stamina);
     }
 
-    public void choice() {
+    public int choice() {
         System.out.println("\nPick your move");
         System.out.println("(1) British Handshake\n(2) At The Ready\n(3) Redbull\n(4) Block\n(5) ULTIMATE(Miss Travailer)");
         int answer = s.nextInt();
@@ -29,31 +29,27 @@ public class Daler extends Character {
                 if (staminaCheck(4)) {
                     if (dmgBoost) {
                         System.out.println("You've already enhanced your next attack!");
-                        damage = 0;
                     } else {
                         moveTwo();
-                        stamina -= loseStamina(4);
-                        damage = 0;
+                        stamina = loseStamina(4);
                     }
                 }
                 break;
             case 3:
-                if (stamina + moveThree("You crack open a nice cold can of redbull", rand.nextInt(10, 16)) > 30)
+                if (stamina + 7 >= 30)
                 {
+                    System.out.println("What are you doing?! You're fully energized!");
                     stamina = 30;
                 }
                 else
                 {
-                    stamina += moveThree("You crack open a nice cold can of redbull", rand.nextInt(10, 16));
+                    stamina += moveThree("You crack open a nice cold can of redbull", 7);
                 }
-                damage = 0;
                 break;
             case 4:
                 if (dmgReduce) {
                     System.out.println("You've already raised your guard!");
-                    damage = 0;
                 } else {
-                    damage = 0;
                     moveFour();
                 }
 
@@ -67,6 +63,7 @@ public class Daler extends Character {
                 }
                 break;
         }
+        return answer;
     }
 
     public int missTravailer() // this is your ult
@@ -84,7 +81,6 @@ public class Daler extends Character {
         if (stamina - staminaCost > 0) {
             return true;
         } else {
-            damage = 0;
             System.out.println("You're exhausted ");
             return false;
         }

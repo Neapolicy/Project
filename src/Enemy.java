@@ -22,11 +22,6 @@ public class Enemy extends Character
         }
         switch (choice)
         {
-            default:
-                attackDesc();
-                damage = moveOne(desc, rand.nextInt(15, 21));
-                stamina = loseStamina(7);
-                break;
             case 2:
                 moveTwo("he shoots you with a nerf dart but it doesn't do anything");
                 damage = 0;
@@ -41,6 +36,11 @@ public class Enemy extends Character
                     stamina += moveThree("Your opponent downs a jack daniels", 20);
                 }
                 damage = 0;
+                break;
+            default:
+                attackDesc();
+                damage = moveOne(desc, rand.nextInt(15, 21));
+                stamina = loseStamina(7);
                 break;
         }
     }

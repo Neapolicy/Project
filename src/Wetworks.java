@@ -3,6 +3,7 @@ public class Wetworks
 {
     private int balance;
     Random rand = new Random();
+    private int turns = 0;
     Daler d = new Daler(100, 30);
     Enemy e = new Enemy(100, 40);
     public Wetworks()
@@ -20,19 +21,27 @@ public class Wetworks
                 getResults();
                 break;
             }
-            d.choice();
-            if (d.getdmgBoost())
+            if (turns % 2 == 1)
             {
-                e.takeDamage((int) Math.round((d.getDamage() * 2.5)));
+                d.choice();
+                turns ++;
+            }
+            else
+            {
+                e.enemyChoice();
+                turns ++;
+            }
+            if (d.getdmgBoost() && (d.choice() == 1))
+            {
+                e.takeDamage((d.getDamage() * 2));
                 d.resetBoost();
             }
-            else {
+            else if (d.choice() == 1) {
                 e.takeDamage(d.getDamage());
             }
-            e.enemyChoice();
             if (d.getdmgReduce())
             {
-                d.takeDamage((int) Math.round(e.getDamage() * .7));
+                d.takeDamage((int)(e.getDamage() * .5));
                 d.resetReduce();
             }
             else
