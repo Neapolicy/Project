@@ -89,10 +89,6 @@ public class Daler extends Character {
         return dmgReduce;
     }
 
-    public boolean getdmgBoost() {
-        return dmgBoost;
-    }
-
     public void resetReduce() {
         dmgReduce = false;
     }
