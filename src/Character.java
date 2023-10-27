@@ -2,7 +2,10 @@
 public class Character
 {
     protected int health;
+    protected int damage;
+    protected String desc;
     protected int stamina;
+    protected int choice;
     protected int moves;
     protected boolean dmgBoost = false;
 

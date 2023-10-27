@@ -1,9 +1,6 @@
 import java.util.Random;
 
 public class Enemy extends Character {
-    private int choice;
-    private int damage;
-    private String desc;
     private Random rand = new Random();
 
     public Enemy(int health, int stamina) {

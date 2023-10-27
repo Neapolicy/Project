@@ -2,13 +2,9 @@ import java.util.Scanner;
 import java.util.Random;
 
 public class Daler extends Character {
-    private int damage;
     Random rand = new Random();
-    private int answer;
     private boolean dmgReduce = false;
     private final Scanner s = new Scanner(System.in);
-    private boolean exhaustedPrinted = false; // Added boolean variable
-
     public Daler(int health, int stamina) {
         super(health, stamina);
     }
@@ -16,8 +12,8 @@ public class Daler extends Character {
     public int choice() {
         System.out.println("\nPick your move");
         System.out.println("(1) British Handshake\n(2) At The Ready\n(3) Redbull\n(4) Block\n(5) ULTIMATE(Miss Travailer)");
-        answer = s.nextInt();
-        switch (answer) {
+        choice = s.nextInt();
+        switch (choice) {
             case 1:
                 if (stamina >= 7) {
                     damage = moveOne("You give your enemy a firm handshake", rand.nextInt(15, 25));
@@ -72,7 +68,7 @@ public class Daler extends Character {
             default:
                 choice();
         }
-        return answer;
+        return choice;
     }
 
     public void moveTwo() {
