@@ -22,6 +22,11 @@ public class Daler extends Character {
                 if (stamina >= 7) {
                     damage = moveOne("You give your enemy a firm handshake", rand.nextInt(15, 25));
                     moves++;
+                    if (dmgBoost)
+                    {
+                        damage *= 2;
+                        dmgBoost = false;
+                    }
                 }
                 else {
                     System.out.println("Daler is exhausted!");

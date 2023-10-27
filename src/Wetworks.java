@@ -15,31 +15,26 @@ public class Wetworks {
             getInfo();
 
             int dalerChoice = d.choice();
-            e.enemyChoice();
+            ex.enemyChoice();
 
-            if (d.getdmgBoost() && (dalerChoice == 1) && (d.stamina > 7)) {
-                e.takeDamage((d.getDamage() * 2));
-                d.resetBoost();
-                d.stamina -= 7;
-            }
-            else if (dalerChoice == 1 && d.stamina >= 7) {
-                e.takeDamage(d.getDamage());
+            if (dalerChoice == 1 && d.stamina >= 7) {
+                ex.takeDamage(d.getDamage());
                 d.stamina -= 7; // Deduct stamina after the action is performed
             }
             else if (dalerChoice == 5 && d.moves >= 5)
             {
                 d.moves = 0;
-                e.takeDamage(500);
+                ex.takeDamage(500);
             }
 
             if (d.getdmgReduce()) {
-                d.takeDamage((int) (e.getDamage() * 0.5));
+                d.takeDamage((int) (ex.getDamage() * 0.5));
                 d.resetReduce();
             } else {
-                d.takeDamage(e.getDamage());
+                d.takeDamage(ex.getDamage());
             }
-            if (e.health <= 0) {
-                e.health = 0; // sets enemy health to zero
+            if (ex.health <= 0) {
+                ex.health = 0; // sets enemy health to zero
                 System.out.println("You successfully took down your target!");
                 getBalance();
                 getResults();
@@ -56,7 +51,7 @@ public class Wetworks {
     }
 
     public boolean getResults() {
-        return e.getHealth() <= 0;
+        return ex.getHealth() <= 0;
     }
 
     public int getBalance() {
@@ -66,6 +61,6 @@ public class Wetworks {
 
     public void getInfo() {
         System.out.println("Daler's stats: " + d.health + " health, " + d.stamina + " stamina");
-        System.out.println("Enemy's stats: " + e.getHealth() + " health, " + e.getStamina() + " stamina");
+        System.out.println("Enemy's stats: " + ex.getHealth() + " health, " + ex.getStamina() + " stamina");
     }
 }
