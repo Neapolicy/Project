@@ -28,10 +28,21 @@ public class Enemy extends Character {
                 }
                 damage = 0;
                 break;
+            case 4:
+                if (moves > 7)
+                {
+                    System.out.println("Your opponent is embraced by the holy light of the gambling god");
+                    health += 15;
+                    moves = 0;
+                }
+                else {
+                    System.out.println("Your opponent mutters to himself");
+                }
             default:
                 desc = attackDesc();
                 damage = moveOne(desc, rand.nextInt(15, 21));
                 stamina -= 7;
+                moves ++;
                 break;
         }
     }

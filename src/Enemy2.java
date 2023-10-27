@@ -56,6 +56,13 @@ public class Enemy2 extends Character {
                 }
                 damage = 0;
                 break;
+            case 4:
+                if (health < 200)
+                {
+                    health += 5;
+                    System.out.println("\nYour opponent drinks some water, restoring 5 HP in the process!");
+                }
+                break;
             default:
                 moves++;
                 moveTwo("Your opponent chuckles in confidence");

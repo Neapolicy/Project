@@ -2,7 +2,7 @@ import java.util.Scanner;
 public class Game
 {
     private String guess;
-    private int timesGambled = 1;
+    private int timesGambled;
     private int tails;
     private int heads;
     private int balance;
@@ -25,17 +25,14 @@ public class Game
             if (response.contains("coin"))
             {
                 coinFlipGame();
-                l.loreReveal(timesGambled);
             }
             else if (response.contains("dice"))
             {
                 diceGame();
-                l.loreReveal(timesGambled);
             }
             else if (response.contains("slot"))
             {
                 slotsGame();
-                l.loreReveal(timesGambled);
             }
             else if (response.contains("steal") && (timesGambled >= 6))
             {
@@ -55,7 +52,7 @@ public class Game
                     System.out.println("\nYour balance is now $" + w.getBalance());
                 }
                 else {
-                    System.out.println("Unfortunately, you have been game ended on the job, your funeral bill costs more than you can afford");
+                    System.out.println("Unfortunately, you have been sent to the depths, your funeral bill costs more than you can afford");
                     break;
                 }
             }
@@ -70,6 +67,7 @@ public class Game
                 System.out.println("\nYou're in debt! What a loser! Get out!");
                 break;
             }
+            l.loreReveal(timesGambled);
             System.out.println("\nWould you like to play Dice game, Slots, Coin flip\nSlots is $10 per try\nType \"quit\" to quit");
             response  = s.nextLine();
         }

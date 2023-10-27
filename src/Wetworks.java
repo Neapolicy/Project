@@ -2,9 +2,9 @@ import java.util.Random;
 
 public class Wetworks {
     private int balance;
+    private final Scanner s = new Scanner(System.in);
     Random rand = new Random();
     Daler d = new Daler(100, 30);
-    Enemy e = new Enemy(100, 40);
     Enemy2 ex = new Enemy2(200, 100);
 
     public Wetworks() {
