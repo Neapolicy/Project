@@ -1,16 +1,19 @@
 import java.util.Random;
-
-public class Wetworks {
+import java.util.Scanner;
+public class Wetworks
+{
     private int balance;
     private final Scanner s = new Scanner(System.in);
     Random rand = new Random();
     Daler d = new Daler(100, 30);
     Enemy2 ex = new Enemy2(200, 100);
 
-    public Wetworks() {
+    public Wetworks()
+    {
         game();
     }
-    public void game() {
+    public void game()
+    {
         while (d.getHealth() > 0) {
             getInfo();
 

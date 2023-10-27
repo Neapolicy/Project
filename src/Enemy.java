@@ -3,7 +3,8 @@ import java.util.Random;
 public class Enemy extends Character {
     private Random rand = new Random();
 
-    public Enemy(int health, int stamina) {
+    public Enemy(int health, int stamina)
+    {
         super(health, stamina);
     }
 
