@@ -37,13 +37,16 @@ public class Character
         }
         return false;
     }
-    public boolean staminaLimit(int recover, int cap)
+    public boolean staminaLimit(int recover, int cap) // makes sure stamina doesn't go past the max when recovering
     {
         return stamina + recover >= cap;
     }
-    public int getHealth()
+    public int getHealth() // getter for health
     {
         return health;
     }
-    public int getStamina() { return stamina; }
+    public int getStamina() // getter for stamina
+    {
+        return stamina;
+    }
 }

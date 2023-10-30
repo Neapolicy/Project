@@ -5,7 +5,8 @@ public class Daler extends Character {
     Random rand = new Random();
     private boolean dmgReduce = false;
     private final Scanner s = new Scanner(System.in);
-    public Daler(int health, int stamina) {
+    public Daler(int health, int stamina)
+    {
         super(health, stamina);
     }
 
@@ -78,20 +79,24 @@ public class Daler extends Character {
         dmgBoost = true;
     }
 
-    public void moveFour() {
+    public void moveFour()
+    {
         System.out.println("You raise your guard");
         dmgReduce = true;
     }
 
-    public int getDamage() {
+    public int getDamage() // getter for damage
+    {
         return damage;
     }
 
-    public boolean getdmgReduce() {
+    public boolean getdmgReduce() // getter for damage reduction
+    {
         return dmgReduce;
     }
 
-    public void resetReduce() {
+    public void resetReduce() // removes damage reduction
+    {
         dmgReduce = false;
     }
 }

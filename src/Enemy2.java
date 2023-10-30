@@ -1,13 +1,15 @@
 import java.util.Random;
 
-public class Enemy2 extends Character {
+public class Enemy2 extends Character // literally another enemy class
+{
     private Random rand = new Random();
     public Enemy2(int health, int stamina)
     {
         super(health, stamina);
     }
 
-    public void enemyChoice() {
+    public void enemyChoice() // chooses what enemy does
+    {
         if (stamina >= 70)
         {
             if (moves >= 5)
@@ -78,7 +80,8 @@ public class Enemy2 extends Character {
         return damage;
     }
 
-    public String attackDesc() {
+    public String attackDesc()
+    {
         int i = rand.nextInt(1, 3);
         switch (i) {
             case 1:

@@ -1,4 +1,4 @@
-public class Lore
+public class Lore // daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore daler lore
 {
     private boolean stealUnlock;
     private boolean murderUnlock;
@@ -25,10 +25,12 @@ public class Lore
                 break;
         }
     }
-    public boolean isMurderUnlock() {
+    public boolean isMurderUnlock() // unlocks KILLING
+    {
         return murderUnlock;
     }
-    public boolean isStealUnlock() {
+    public boolean isStealUnlock() // unlocks STEALING
+    {
         return stealUnlock;
     }
 }

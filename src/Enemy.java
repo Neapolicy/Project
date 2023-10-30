@@ -1,6 +1,7 @@
 import java.util.Random;
 
-public class Enemy extends Character {
+public class Enemy extends Character
+{
     private Random rand = new Random();
 
     public Enemy(int health, int stamina)
@@ -8,13 +9,18 @@ public class Enemy extends Character {
         super(health, stamina);
     }
 
-    public void enemyChoice() {
-        if (stamina >= 7) {
+    public void enemyChoice() // chooses what enemy does
+    {
+        if (stamina >= 7)
+        {
             choice = rand.nextInt(1, 11);
-        } else {
+        }
+        else
+        {
             choice = 3;
         }
-        switch (choice) {
+        switch (choice)
+        {
             case 2:
                 moveTwo("he shoots you with a nerf dart but it doesn't do anything");
                 damage = 0;
@@ -48,11 +54,13 @@ public class Enemy extends Character {
         }
     }
 
-    public int getDamage() {
+    public int getDamage()
+    {
         return damage;
     }
 
-    public String attackDesc() {
+    public String attackDesc() // chooses attack description
+    {
         int i = rand.nextInt(1, 3);
         switch (i) {
             case 1:

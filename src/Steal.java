@@ -19,7 +19,7 @@ public class Steal
     {
         putValues();
         this.balance = balance;
-        System.out.println("Select your risk level, from 1-10");
+        System.out.println("Select your risk level, from 1-10"); // risk level determines who your target will be and how hard it will be to successfully rob
         riskLevel = s.nextInt();
         while (riskLevel > 10 || riskLevel < 1)
         {
@@ -63,7 +63,7 @@ public class Steal
             answer = s.nextLine();
         }
     }
-    public void putValues()
+    public void putValues() // stores people
     {
         dictionary.put(1,"Homeless Man");
         dictionary.put(2,"Drunk Alcoholic");
@@ -93,7 +93,7 @@ public class Steal
         balance -= temp;
         System.out.println("Wow! You failed to rob " + targetType + " and now have to pay a fine of $" + temp);
     }
-    public void reroll()
+    public void reroll() // determines SUCCESS
     {
         int eventChance = rand.nextInt(3) + 1;
         switch (eventChance)
@@ -141,7 +141,7 @@ public class Steal
             }
         }
     }
-    public void changeDesc()
+    public void changeDesc() // makes descriptions
     {
         switch(targetValue)
         {
@@ -223,7 +223,8 @@ public class Steal
             answer = s.nextLine();
         }
     }
-    public static int factorial(int tVal) {
+    public static int factorial(int tVal) //
+    {
         if (tVal > 0)
         {
             return tVal * (factorial(tVal - 1));
