@@ -3,6 +3,7 @@ public class Game
 {
     private String guess;
     private int timesGambled;
+    private String txt = "\nWould you like to play Dice game, Slots, Coin flip";
     private int tails;
     private int heads;
     private int balance;
@@ -13,10 +14,11 @@ public class Game
     Advertisements ads = new Advertisements();
     Player p = new Player();
     Lore l = new Lore();
-    public Game() throws InterruptedException {
+    public Game() throws InterruptedException
+    { // This is where the game is run, where you can make terrible life choices
         System.out.println("Your current balance is $" + w.getBalance());
         p.welcome();
-        System.out.println("\nWould you like to play Dice game, Slots, Coin flip\nSlots is $10 per try\nType \"quit\" to quit");
+        System.out.println(txt + "\nOr leave?\nSlots is $10 per spin");
         Scanner s = new Scanner(System.in);
         String response = s.nextLine();
         response = response.toLowerCase();
@@ -44,15 +46,15 @@ public class Game
             }
             else if (response.contains("job") && (timesGambled >= 8))
             {
-                Wetworks wet = new Wetworks();
+                Wetworks wet = new Wetworks(w.getBalance());
                 if (wet.getResults())
                 {
-                    this.balance += wet.getBalance();
+                    balance = wet.getBalance();
                     w.setBalance(balance);
                     System.out.println("\nYour balance is now $" + w.getBalance());
                 }
                 else {
-                    System.out.println("Unfortunately, you have been sent to the depths, your funeral bill costs more than you can afford");
+                    System.out.println("Unfortunately, you have been sent to the depths, good luck getting out of there you sorry sod");
                     break;
                 }
             }

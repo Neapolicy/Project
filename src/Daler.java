@@ -9,14 +9,15 @@ public class Daler extends Character {
         super(health, stamina);
     }
 
-    public int choice() {
+    public int choice() { // The place where Daler(you) make your choice
         System.out.println("\nPick your move");
         System.out.println("(1) British Handshake\n(2) At The Ready\n(3) Redbull\n(4) Block\n(5) ULTIMATE(Miss Travailer)");
         choice = s.nextInt();
         switch (choice) {
             case 1:
-                if (stamina >= 7) {
-                    damage = moveOne("You give your enemy a firm handshake", rand.nextInt(15, 25));
+                if (stamina >= 7)
+                {
+                    damage = moveOne("You give your enemy a firm handshake", rand.nextInt(15, 25)) + addOn;
                     moves++;
                     if (dmgBoost)
                     {
@@ -71,7 +72,8 @@ public class Daler extends Character {
         return choice;
     }
 
-    public void moveTwo() {
+    public void moveTwo()
+    {
         System.out.println("You steady yourself for your next attack");
         dmgBoost = true;
     }
@@ -91,9 +93,5 @@ public class Daler extends Character {
 
     public void resetReduce() {
         dmgReduce = false;
-    }
-
-    public void resetBoost() {
-        dmgBoost = false;
     }
 }

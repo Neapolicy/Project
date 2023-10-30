@@ -8,8 +8,10 @@ public class Wetworks
     Daler d = new Daler(100, 30);
     Enemy2 ex = new Enemy2(200, 100);
 
-    public Wetworks()
+    public Wetworks(int balance) //initiates the shop and the game
     {
+        this.balance = balance;
+        shop();
         game();
     }
     public void game()
@@ -58,12 +60,72 @@ public class Wetworks
     }
 
     public int getBalance() {
-        balance += rand.nextInt(100, 200);
+        balance += rand.nextInt(1500, 2001);
         return balance;
     }
 
     public void getInfo() {
         System.out.println("Daler's stats: " + d.health + " health, " + d.stamina + " stamina");
         System.out.println("Enemy's stats: " + ex.getHealth() + " health, " + ex.getStamina() + " stamina");
+    }
+    public void shop() //creates a shop. Can be used to improve player stats like health and damage
+    {
+        System.out.println("Would you like to purchase some equipment before you begin?");
+        System.out.println("You currently have $" + balance);
+        String answer = s.nextLine();
+        if (answer.equals("yes"))
+        {
+            System.out.println("Alright! Here's what's in the shop:\n(1) $50 - A Very Cool Hat (gives more health)\n(2) $50 - Some Very Interesting Sugar (gives more attack power)\n(3) $90 - Both Items (10% Discount!!)\n(4) Neither (leave shop)");
+            answer = s.nextLine();
+            switch (answer)
+            {
+                case "1":
+                {
+                    if (balance > 50)
+                    {
+                        System.out.println("You have successfully purchased A Very Cool Hat!\nYou have gained 20 more health.\n");
+                        d.health += 20;
+                        balance -= 50;
+                    }
+                    else
+                    {
+                        System.out.println("You're too poor!! This cool hat is too cool for you!! Get out of my shop!!!\n");
+                    }
+                    break;
+                }
+                case "2":
+                {
+                    if (balance > 50)
+                    {
+                        System.out.println("You have successfully purchased Some Very Interesting Sugar!\nYou have gained 10 more attack power.\n");
+                        d.addOn += 10;
+                        balance -= 50;
+                    }
+                    else
+                    {
+                        System.out.println("If you can afford my co- *cough* sugar then get out!!!\n");
+                    }
+                    break;
+                }
+                case "3":
+                {
+                    if (balance > 90)
+                    {
+                        System.out.println("You decided to buy both items.\nHealth has increased by 20! \nAttack power has increased by 10!\n");
+                        d.addOn += 10;
+                        d.health += 20;
+                        balance -= 90;
+                    }
+                    else
+                    {
+                        System.out.println("What do you mean buy both? You're too broke for that! Get out of here!");
+                    }
+                    break;
+                }
+                default:
+                    System.out.println("You bought nothing and left.\n");
+                    break;
+            }
+        }
     }
 }

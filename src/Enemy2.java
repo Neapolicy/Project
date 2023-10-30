@@ -2,7 +2,6 @@ import java.util.Random;
 
 public class Enemy2 extends Character {
     private Random rand = new Random();
-
     public Enemy2(int health, int stamina)
     {
         super(health, stamina);
@@ -36,7 +35,7 @@ public class Enemy2 extends Character {
                     dmgBoost = true;
                 }
                 break;
-            case 2:
+            case 2, 5:
                 desc = attackDesc();
                 damage = moveOne(desc, 35);
                 if (dmgBoost)

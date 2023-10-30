@@ -2,6 +2,7 @@
 public class Character
 {
     protected int health;
+    protected int addOn;
     protected int damage;
     protected String desc;
     protected int stamina;
@@ -31,9 +32,8 @@ public class Character
     public boolean staminaCheck(int staminaCost) {
         if (stamina - staminaCost >= 0) {
             return true;
-        } else {
-            return false;
         }
+        return false;
     }
     public boolean staminaLimit(int recover, int cap)
     {
