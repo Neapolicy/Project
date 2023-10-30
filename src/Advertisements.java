@@ -3,9 +3,9 @@ import java.util.Map;
 import java.util.Random;
 public class Advertisements
 {
-    Map<Integer, String> dictionary = new HashMap<>();
+    Map<Integer, String> dictionary = new HashMap<>(); // creates dictionary
     Random rand = new Random();
-    public Advertisements()
+    public Advertisements() // this is used to store all the possible advertisements that could be displayed
     {
         dictionary.put(9, "\n天上太阳红呀红彤彤诶\n" +
                 "心中的太阳是毛泽东诶\n" +
@@ -49,8 +49,8 @@ public class Advertisements
         dictionary.put(90, "\nMan I love air conditioning, and so does Dyson! Get your next air conditioner for 1% off at dyson.com/ferguson!");
         dictionary.put(100, "\nWant a break from the ads? Try Ferguson's Premium");
     }
-    public void adsPrint()
-    {
+    public void adsPrint() // prints the specific advertisement if the random int from 1-100 matches the int associated with a certain ad
+    {                      // (1/100 chance for a specific ad to appear, 1/10 chance for any ad to appear)
         Integer adsNum = rand.nextInt(100)+1;
         if (dictionary.get(adsNum) != null)
         {
