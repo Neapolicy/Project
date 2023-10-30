@@ -70,7 +70,15 @@ public class Game
                 break;
             }
             l.loreReveal(timesGambled);
-            System.out.println("\nWould you like to play Dice game, Slots, Coin flip\nSlots is $10 per try\nType \"quit\" to quit");
+            if(timesGambled == 8)
+            {
+                txt += ", or job?";
+            }
+            if (timesGambled == 6)
+            {
+                txt += ", Steal";
+            }
+            System.out.println(txt + "\nOr leave?\nSlots is $10 per spin");
             response  = s.nextLine();
         }
     }
