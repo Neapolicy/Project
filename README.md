@@ -1,15 +1,33 @@
 # Ferguson's Casino
 
-Where you can make questionable choices and perform even more questionable tasks, all in the name of the grind
+Where you can make questionable choices and perform even more questionable tasks, all in the name of the grind\
+Everything is secondary in the face of gambling
+### **Are you ready to start gambling?**
 
+---
 ## Installation
 
-Download as ZIP file and extract it in a Java IDE
+Download as ZIP file and extract it in a Java IDE\
+The project and zip file can be found [here](https://github.com/Neapolicy/Project)
 
 ## Purpose
 
-Fergunson's Casino is a simple game where you gamble your (virtual) savings away
+Ferguson's Casino is a simple game where you gamble your (virtual) savings away\
+Have fun as you go through the trials and tribulations and (try) surviving!
 
 ## Inspirations
 
-A certain streamer inspired the idea for enemy two
+Parts of this game like the enemies were inspired by a certain streamer\
+(will not be named for privacy reasons)\
+There are also 2 more aspects inspired by a fighting game (will not be named)
+
+## Modes
+ - Coin Flip (Fair or rigged)
+ - Dice Game (Roll a dice and bet on outcome)
+ - Slots (Roll a slot machine and see if you win)
+ - ??? (You get to ??? from someone)
+ - ?!?! (You get to !?!? someone)
+
+## Important Information
+**This is in NO way meant to be a guide to gambling and/or be replicated in real life**\
+**If you or a loved one has a gambling addiction, please reach out to 1-800-662-4357 where trained professionals can help**
