@@ -156,7 +156,7 @@ public class Game
         w.rebet();
         balance = w.getBalance();
         bets = w.getBets();
-        p.playerPreference();
+        p.response();
         p.playerGuess();
         p.timesFlip();
         heads = p.getHeads();

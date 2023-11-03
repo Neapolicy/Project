@@ -2,7 +2,7 @@ import java.util.Scanner;
 public class Player
 {
     private final String name;
-    private String preference;
+    private int preference;
     private String guess;
     private boolean run = true;
     private final Scanner s = new Scanner(System.in);
@@ -14,12 +14,15 @@ public class Player
         System.out.println("What's your name?");
         name = s.nextLine();
     }
-
+    public void response()
+    {
+        System.out.println("Do you want a rigged (1) coin flip or fair one (2)? (Please note that you are only allowed to rig it once)");
+        preference = s.nextInt();
+        playerPreference();
+    }
     public void playerPreference()
     {
-        System.out.println("Do you want a rigged coin flip or fair one?");
-        final String res = s.nextLine();
-        if (res.equals("rigged"))
+        if (preference == 1)
         {
             System.out.println("Coins will be rigged.");
         }
@@ -27,31 +30,30 @@ public class Player
         {
             System.out.println("Coins will be fair.");
         }
-        preference = res;
     }
     public void playerGuess()
     {
-        System.out.println("Heads or tails?");
-        String answer = s.nextLine();
+        System.out.println("Heads (1) or tails? (2)");
+        int answer = s.nextInt();
         while (run)
         {
-            if (answer.contains("head") || (answer.contains("tail")))
+            if (answer == 1 || (answer == 2))
             {
                 run = false;
             }
             else
             {
-                System.out.println(name.toString() + ", please put a valid input"); // added tostring to this
-                answer = s.nextLine();
+                System.out.println(name + ", please put a valid input"); // added tostring to this
+                answer = s.nextInt();
             }
         }
-        guess = answer;
+        guess = Integer.toString(answer);;
     }
     public void timesFlip()
     {
         System.out.println("How many times do you want to flip the coin?");
         int times = s.nextInt();
-        if (preference.equals("rigged"))
+        if (preference == 1)
         {
             Coin coin = new Coin(times);
             heads = coin.getHeads();
