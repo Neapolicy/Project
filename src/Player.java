@@ -16,7 +16,7 @@ public class Player
     }
     public void response()
     {
-        System.out.println("Do you want a rigged (1) coin flip or fair one (2)? (Please note that you are only allowed to rig it once)");
+        System.out.println("Do you want a rigged (1) coin flip or fair one (2)?");
         preference = s.nextInt();
         playerPreference();
     }
